@@ -1,0 +1,3 @@
+MODULE JK_trigger_Test
+SUBMODULE JK_trigger
+INSTANCE UUT

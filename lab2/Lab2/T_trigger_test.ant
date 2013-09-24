@@ -1,0 +1,160 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 1995-2003 Xilinx, Inc.
+-- All Right Reserved.
+--------------------------------------------------------------------------------
+--   ____  ____ 
+--  /   /\/   / 
+-- /___/  \  /    Vendor: Xilinx 
+-- \   \   \/     Version : 10.1
+--  \   \         Application : ISE
+--  /   /         Filename : T_trigger_test.ant
+-- /___/   /\     Timestamp : Tue Sep 24 17:43:23 2013
+-- \   \  /  \ 
+--  \___\/\___\ 
+--
+--Command: 
+--Design Name: T_trigger_test
+--Device: Xilinx
+--
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.STD_LOGIC_TEXTIO.ALL;
+USE STD.TEXTIO.ALL;
+
+ENTITY T_trigger_test IS
+END T_trigger_test;
+
+ARCHITECTURE testbench_arch OF T_trigger_test IS
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "D:\Dropbox\Brigade\APVMIS\lab2\Lab2\T_trigger_test.ano";
+
+    COMPONENT T_trigger
+        PORT (
+            T : In std_logic;
+            R : In std_logic;
+            S : In std_logic;
+            Q : Out std_logic;
+            notQ : Out std_logic
+        );
+    END COMPONENT;
+
+    SIGNAL T : std_logic := '0';
+    SIGNAL R : std_logic := '0';
+    SIGNAL S : std_logic := '0';
+    SIGNAL Q : std_logic := '0';
+    SIGNAL notQ : std_logic := '0';
+
+    SHARED VARIABLE TX_ERROR : INTEGER := 0;
+    SHARED VARIABLE TX_OUT : LINE;
+
+    constant PERIOD : time := 20 ns;
+    constant DUTY_CYCLE : real := 0.5;
+    constant OFFSET : time := 0 ns;
+
+    BEGIN
+        UUT : T_trigger
+        PORT MAP (
+            T => T,
+            R => R,
+            S => S,
+            Q => Q,
+            notQ => notQ
+        );
+
+        PROCESS    -- clock process for T
+        BEGIN
+            WAIT for OFFSET;
+            CLOCK_LOOP : LOOP
+                T <= '0';
+                WAIT FOR (PERIOD - (PERIOD * DUTY_CYCLE));
+                T <= '1';
+                WAIT FOR (PERIOD * DUTY_CYCLE);
+            END LOOP CLOCK_LOOP;
+        END PROCESS;
+
+        PROCESS    -- Annotation process for T
+            VARIABLE TX_TIME : INTEGER := 0;
+
+            PROCEDURE ANNOTATE_Q(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", Q, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, Q);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_notQ(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", notQ, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, notQ);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+        BEGIN
+            WAIT for 1 fs;
+            ANNOTATE_Q(0);
+            ANNOTATE_notQ(0);
+            WAIT for OFFSET;
+            TX_TIME := TX_TIME + 0;
+            ANNO_LOOP : LOOP
+                --Rising Edge
+                WAIT for 15 ns;
+                TX_TIME := TX_TIME + 15;
+                ANNOTATE_Q(TX_TIME);
+                ANNOTATE_notQ(TX_TIME);
+                WAIT for 5 ns;
+                TX_TIME := TX_TIME + 5;
+            END LOOP ANNO_LOOP;
+        END PROCESS;
+
+        PROCESS
+            BEGIN
+                -- -------------  Current Time:  5ns
+                WAIT FOR 5 ns;
+                R <= '1';
+                S <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  105ns
+                WAIT FOR 100 ns;
+                R <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  145ns
+                WAIT FOR 40 ns;
+                R <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  205ns
+                WAIT FOR 60 ns;
+                S <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  245ns
+                WAIT FOR 40 ns;
+                S <= '1';
+                -- -------------------------------------
+                WAIT FOR 775 ns;
+
+                STD.TEXTIO.write(TX_OUT, string'("Total[]"));
+                STD.TEXTIO.writeline(RESULTS, TX_OUT);
+                ASSERT (FALSE) REPORT
+                    "Success! Simulation for annotation completed"
+                    SEVERITY FAILURE;
+            END PROCESS;
+
+    END testbench_arch;
+
