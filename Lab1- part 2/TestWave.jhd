@@ -1,0 +1,3 @@
+MODULE TestWave
+SUBMODULE MainDescription
+INSTANCE UUT
