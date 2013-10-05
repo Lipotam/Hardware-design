@@ -45,18 +45,18 @@ port (
 	);
 end component;
 
-signal R, S, T, Qtemp1, Qtemp2 : std_logic;
+signal Rst, S, T, Qtemp1, Qtemp2 : std_logic;
 
 begin
 
-R <= (not leftR) or (not rightR);
+Rst <= (not leftR) and (not rightR);
 T <= not notT;
 S <= not notS;
 
-jk: JK_trigger port map(T, T, T, R, S, Qtemp1, Qtemp2);
+jk: JK_trigger port map(T, T, T, Rst, S, Qtemp1, Qtemp2);
 
 Q <= Qtemp1;
-notQ <= Qtemp2;
+notQ <= Rst;
 
 end Behavioral;
 

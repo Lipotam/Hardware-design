@@ -5,10 +5,10 @@
 --   ____  ____ 
 --  /   /\/   / 
 -- /___/  \  /    Vendor: Xilinx 
--- \   \   \/     Version : 10.1.03
+-- \   \   \/     Version : 10.1
 --  \   \         Application : ISE
 --  /   /         Filename : JK_trigger_Test.ant
--- /___/   /\     Timestamp : Tue Sep 24 19:34:44 2013
+-- /___/   /\     Timestamp : Sat Oct 05 09:18:43 2013
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -28,7 +28,7 @@ ENTITY JK_trigger_Test IS
 END JK_trigger_Test;
 
 ARCHITECTURE testbench_arch OF JK_trigger_Test IS
-    FILE RESULTS: TEXT OPEN WRITE_MODE IS "C:\Temp\lab2\Lab2\JK_trigger_Test.ano";
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "D:\Projects\HardwareDesign\lab2\Lab2\JK_trigger_Test.ano";
 
     COMPONENT JK_trigger
         PORT (
@@ -143,12 +143,12 @@ ARCHITECTURE testbench_arch OF JK_trigger_Test IS
                 WAIT FOR 185 ns;
                 R <= '0';
                 -- -------------------------------------
-                -- -------------  Current Time:  485ns
-                WAIT FOR 200 ns;
+                -- -------------  Current Time:  685ns
+                WAIT FOR 400 ns;
                 R <= '1';
                 -- -------------------------------------
                 -- -------------  Current Time:  885ns
-                WAIT FOR 400 ns;
+                WAIT FOR 200 ns;
                 S <= '0';
                 -- -------------------------------------
                 -- -------------  Current Time:  1085ns

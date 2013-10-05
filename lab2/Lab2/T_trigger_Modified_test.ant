@@ -5,10 +5,10 @@
 --   ____  ____ 
 --  /   /\/   / 
 -- /___/  \  /    Vendor: Xilinx 
--- \   \   \/     Version : 10.1.03
+-- \   \   \/     Version : 10.1
 --  \   \         Application : ISE
 --  /   /         Filename : T_trigger_Modified_test.ant
--- /___/   /\     Timestamp : Tue Sep 24 19:23:47 2013
+-- /___/   /\     Timestamp : Sat Oct 05 09:19:35 2013
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -28,7 +28,7 @@ ENTITY T_trigger_Modified_test IS
 END T_trigger_Modified_test;
 
 ARCHITECTURE testbench_arch OF T_trigger_Modified_test IS
-    FILE RESULTS: TEXT OPEN WRITE_MODE IS "D:\APVMIS\lab2\Lab2\T_trigger_Modified_test.ano";
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "D:\Projects\HardwareDesign\lab2\Lab2\T_trigger_Modified_test.ano";
 
     COMPONENT T_trigger_Modified
         PORT (

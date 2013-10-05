@@ -1,4 +1,4 @@
-# version: 10.1.03
+# version: 10.1
 # Project Navigator Project Restoration Script
 #
 # WARNING: Do not modify this file. Any alteration of this file is not
@@ -867,7 +867,7 @@ proc restore { { project_dir "" } } {
       "A" "" "" "" "PROPEXT_xilxSynthAddBufg_spartan3" "8" 
       "A" "" "" "" "PROPEXT_xilxSynthMaxFanout_virtex2" "500" 
       "A" "" "" "" "PROP_AutoGenFile" "false" 
-      "A" "" "" "" "PROP_BehavioralSimTop" "Module|JK_trigger_Test" 
+      "A" "" "" "" "PROP_BehavioralSimTop" "Module|T_trigger_Modified_test" 
       "A" "" "" "" "PROP_CPLDFitkeepio" "false" 
       "A" "" "" "" "PROP_CompxlibAbelLib" "true" 
       "A" "" "" "" "PROP_CompxlibCPLDDetLib" "true" 
