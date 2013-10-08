@@ -33,6 +33,8 @@ port (
 		DATA : in std_logic_vector(3 downto 0);
 		CPD, CPU, MR, notPL : in std_logic;
       OUTPUT : out std_logic_vector(3 downto 0);
+		T : out std_logic_vector(3 downto 0);
+		magic : out std_logic;
 		notTCD, notTCU : out std_logic
 	);
 
@@ -105,6 +107,10 @@ notTCU <= not(s_OUTPUT(0) and s_OUTPUT(3) and s_notCPU);
 --
 
 OUTPUT <= s_OUTPUT;
+
+T <= s_notT;
+
+magic <= s_notAnd_magic;
 
 end Behavioral;
 

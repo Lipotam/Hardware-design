@@ -1,0 +1,3 @@
+MODULE Up_down_counter_test2
+SUBMODULE Up_Down_counter
+INSTANCE UUT
