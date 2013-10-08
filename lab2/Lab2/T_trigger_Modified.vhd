@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity T_trigger_Modified is
 
 port (
-		notT, leftR, rightR, notS : in std_logic;
+		notT, leftR, rightR, S : in std_logic;
       Q, notQ : out std_logic 
 	);
 
@@ -45,13 +45,12 @@ port (
 	);
 end component;
 
-signal Rst, S, T, Qtemp1, Qtemp2 : std_logic;
+signal Rst, T, Qtemp1, Qtemp2 : std_logic;
 
 begin
 
-Rst <= (not leftR) and (not rightR);
+Rst <= leftR and rightR;
 T <= not notT;
-S <= not notS;
 
 jk: JK_trigger port map(T, T, T, Rst, S, Qtemp1, Qtemp2);
 

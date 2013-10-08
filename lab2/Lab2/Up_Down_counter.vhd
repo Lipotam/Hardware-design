@@ -42,7 +42,7 @@ architecture Behavioral of Up_Down_counter is
 
 component T_trigger_Modified is
 port (
-		notT, leftR, rightR, notS : in std_logic;
+		notT, leftR, rightR, S : in std_logic;
       Q, notQ : out std_logic 
 	);
 end component;
@@ -103,6 +103,8 @@ notTCD <= not(s_notCPD and s_notOUTPUT(0) and s_notOUTPUT(1) and s_notOUTPUT(2) 
 --TCU output
 notTCU <= not(s_OUTPUT(0) and s_OUTPUT(3) and s_notCPU);
 --
+
+OUTPUT <= s_OUTPUT;
 
 end Behavioral;
 

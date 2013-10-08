@@ -1,9 +1,9 @@
 version 3
-D:/APVMIS/lab2/Lab2/T_trigger_Modified.vhd
+D:/BSUIR/Projects/HardwareDesign/lab2/Lab2/T_trigger_Modified.vhd
 T_trigger_Modified
 VHDL
 VHDL
-D:/APVMIS/lab2/Lab2/T_trigger_Modified_test.xwv
+D:/BSUIR/Projects/HardwareDesign/lab2/Lab2/T_trigger_Modified_test.xwv
 Clocked
 -
 -
@@ -23,6 +23,8 @@ RISING
 CLOCK_LIST_END
 SIGNAL_LIST_BEGIN
 Q
+notT
+S
 notT
 leftR
 notT
@@ -45,9 +47,9 @@ SIGNAL_ORDER_BEGIN
 notT
 leftR
 rightR
-notS
 Q
 notQ
+S
 SIGNAL_ORDER_END
 DIFFERENTIAL_CLKS_BEGIN
 DIFFERENTIAL_CLKS_END

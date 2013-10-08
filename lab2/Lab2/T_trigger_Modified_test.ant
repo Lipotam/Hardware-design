@@ -8,7 +8,7 @@
 -- \   \   \/     Version : 10.1
 --  \   \         Application : ISE
 --  /   /         Filename : T_trigger_Modified_test.ant
--- /___/   /\     Timestamp : Mon Oct 07 16:17:53 2013
+-- /___/   /\     Timestamp : Tue Oct 08 16:57:28 2013
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -35,7 +35,7 @@ ARCHITECTURE testbench_arch OF T_trigger_Modified_test IS
             notT : In std_logic;
             leftR : In std_logic;
             rightR : In std_logic;
-            notS : In std_logic;
+            S : In std_logic;
             Q : Out std_logic;
             notQ : Out std_logic
         );
@@ -44,7 +44,7 @@ ARCHITECTURE testbench_arch OF T_trigger_Modified_test IS
     SIGNAL notT : std_logic := '0';
     SIGNAL leftR : std_logic := '0';
     SIGNAL rightR : std_logic := '0';
-    SIGNAL notS : std_logic := '0';
+    SIGNAL S : std_logic := '0';
     SIGNAL Q : std_logic := '0';
     SIGNAL notQ : std_logic := '0';
 
@@ -61,7 +61,7 @@ ARCHITECTURE testbench_arch OF T_trigger_Modified_test IS
             notT => notT,
             leftR => leftR,
             rightR => rightR,
-            notS => notS,
+            S => S,
             Q => Q,
             notQ => notQ
         );
@@ -129,8 +129,12 @@ ARCHITECTURE testbench_arch OF T_trigger_Modified_test IS
 
         PROCESS
             BEGIN
+                -- -------------  Current Time:  185ns
+                WAIT FOR 185 ns;
+                S <= '1';
+                -- -------------------------------------
                 -- -------------  Current Time:  785ns
-                WAIT FOR 785 ns;
+                WAIT FOR 600 ns;
                 leftR <= '1';
                 -- -------------------------------------
                 -- -------------  Current Time:  1185ns
@@ -145,15 +149,7 @@ ARCHITECTURE testbench_arch OF T_trigger_Modified_test IS
                 WAIT FOR 400 ns;
                 rightR <= '0';
                 -- -------------------------------------
-                -- -------------  Current Time:  2185ns
-                WAIT FOR 400 ns;
-                notS <= '1';
-                -- -------------------------------------
-                -- -------------  Current Time:  2585ns
-                WAIT FOR 400 ns;
-                notS <= '0';
-                -- -------------------------------------
-                WAIT FOR 7615 ns;
+                WAIT FOR 8415 ns;
 
                 STD.TEXTIO.write(TX_OUT, string'("Total[]"));
                 STD.TEXTIO.writeline(RESULTS, TX_OUT);
