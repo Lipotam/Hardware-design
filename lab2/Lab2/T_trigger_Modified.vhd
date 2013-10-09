@@ -55,7 +55,7 @@ T <= not notT;
 jk: JK_trigger port map(T, T, T, Rst, S, Qtemp1, Qtemp2);
 
 Q <= Qtemp1;
-notQ <= Rst;
+notQ <= Qtemp2;
 
 end Behavioral;
 

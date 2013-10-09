@@ -5,10 +5,10 @@
 --   ____  ____ 
 --  /   /\/   / 
 -- /___/  \  /    Vendor: Xilinx 
--- \   \   \/     Version : 10.1
+-- \   \   \/     Version : 10.1.03
 --  \   \         Application : ISE
 --  /   /         Filename : counter_test_1.ant
--- /___/   /\     Timestamp : Tue Oct 08 17:11:59 2013
+-- /___/   /\     Timestamp : Tue Oct 08 19:58:02 2013
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -28,7 +28,7 @@ ENTITY counter_test_1 IS
 END counter_test_1;
 
 ARCHITECTURE testbench_arch OF counter_test_1 IS
-    FILE RESULTS: TEXT OPEN WRITE_MODE IS "D:\BSUIR\Projects\HardwareDesign\lab2\Lab2\counter_test_1.ano";
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "C:\Temp\lab2\Lab2\counter_test_1.ano";
 
     COMPONENT Up_Down_counter
         PORT (
@@ -39,7 +39,12 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
             notPL : In std_logic;
             OUTPUT : Out std_logic_vector (3 DownTo 0);
             T : Out std_logic_vector (3 DownTo 0);
+            reset : Out std_logic_vector (3 DownTo 0);
+            set : Out std_logic_vector (3 DownTo 0);
             magic : Out std_logic;
+            and_4 : Out std_logic;
+            and_5 : Out std_logic;
+            and_6 : Out std_logic;
             notTCD : Out std_logic;
             notTCU : Out std_logic
         );
@@ -52,7 +57,12 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
     SIGNAL notPL : std_logic := '0';
     SIGNAL OUTPUT : std_logic_vector (3 DownTo 0) := "0000";
     SIGNAL T : std_logic_vector (3 DownTo 0) := "0000";
+    SIGNAL reset : std_logic_vector (3 DownTo 0) := "0000";
+    SIGNAL set : std_logic_vector (3 DownTo 0) := "0000";
     SIGNAL magic : std_logic := '0';
+    SIGNAL and_4 : std_logic := '0';
+    SIGNAL and_5 : std_logic := '0';
+    SIGNAL and_6 : std_logic := '0';
     SIGNAL notTCD : std_logic := '0';
     SIGNAL notTCU : std_logic := '0';
 
@@ -69,7 +79,12 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
             notPL => notPL,
             OUTPUT => OUTPUT,
             T => T,
+            reset => reset,
+            set => set,
             magic => magic,
+            and_4 => and_4,
+            and_5 => and_5,
+            and_6 => and_6,
             notTCD => notTCD,
             notTCU => notTCU
         );
@@ -107,6 +122,36 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
                 STD.TEXTIO.writeline(RESULTS, TX_LOC);
                 STD.TEXTIO.Deallocate(TX_LOC);
             END;
+            PROCEDURE ANNOTATE_reset(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", reset, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, reset);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_set(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", set, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, set);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
             PROCEDURE ANNOTATE_magic(
                 TX_TIME : INTEGER
             ) IS
@@ -117,6 +162,51 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
                 STD.TEXTIO.write(TX_LOC, TX_TIME);
                 STD.TEXTIO.write(TX_LOC, string'(", magic, "));
                 IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, magic);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_and_4(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", and_4, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, and_4);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_and_5(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", and_5, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, and_5);
+                STD.TEXTIO.write(TX_LOC, string'("]"));
+                TX_STR(TX_LOC.all'range) := TX_LOC.all;
+                STD.TEXTIO.writeline(RESULTS, TX_LOC);
+                STD.TEXTIO.Deallocate(TX_LOC);
+            END;
+            PROCEDURE ANNOTATE_and_6(
+                TX_TIME : INTEGER
+            ) IS
+                VARIABLE TX_STR : String(1 to 4096);
+                VARIABLE TX_LOC : LINE;
+            BEGIN
+                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
+                STD.TEXTIO.write(TX_LOC, TX_TIME);
+                STD.TEXTIO.write(TX_LOC, string'(", and_6, "));
+                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, and_6);
                 STD.TEXTIO.write(TX_LOC, string'("]"));
                 TX_STR(TX_LOC.all'range) := TX_LOC.all;
                 STD.TEXTIO.writeline(RESULTS, TX_LOC);
@@ -156,7 +246,12 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
             WAIT for 1 fs;
             ANNOTATE_OUTPUT(0);
             ANNOTATE_T(0);
+            ANNOTATE_reset(0);
+            ANNOTATE_set(0);
             ANNOTATE_magic(0);
+            ANNOTATE_and_4(0);
+            ANNOTATE_and_5(0);
+            ANNOTATE_and_6(0);
             ANNOTATE_notTCD(0);
             ANNOTATE_notTCU(0);
             ANNO_LOOP : LOOP
@@ -164,7 +259,12 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
                 TX_TIME := TX_TIME + 50;
                 ANNOTATE_OUTPUT(TX_TIME);
                 ANNOTATE_T(TX_TIME);
+                ANNOTATE_reset(TX_TIME);
+                ANNOTATE_set(TX_TIME);
                 ANNOTATE_magic(TX_TIME);
+                ANNOTATE_and_4(TX_TIME);
+                ANNOTATE_and_5(TX_TIME);
+                ANNOTATE_and_6(TX_TIME);
                 ANNOTATE_notTCD(TX_TIME);
                 ANNOTATE_notTCU(TX_TIME);
                 WAIT for 50 ns;
@@ -174,8 +274,12 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
 
         PROCESS
             BEGIN
+                -- -------------  Current Time:  100ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
                 -- -------------  Current Time:  200ns
-                WAIT FOR 200 ns;
+                WAIT FOR 100 ns;
                 CPU <= '1';
                 notPL <= '1';
                 -- -------------------------------------
@@ -303,7 +407,608 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
                 WAIT FOR 100 ns;
                 CPU <= '0';
                 -- -------------------------------------
-                WAIT FOR 1700 ns;
+                -- -------------  Current Time:  3400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  3500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  3600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  3700ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  3800ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  3900ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  4000ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  4100ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  4200ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  4300ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  4400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  4500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  4600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  4700ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  4800ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                MR <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  4900ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  5000ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  5100ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                MR <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  5200ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  5300ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  5400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  5500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  5600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  5700ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  5800ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  5900ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  6000ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  6100ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  6200ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  6300ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  6400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  6500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  6600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  6700ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  6800ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  6900ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  7000ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  7100ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  7200ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  7300ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  7400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  7500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  7600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  7700ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  7800ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  7900ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  8000ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  8100ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  8200ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  8300ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  8400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  8500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  8600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  8700ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  8800ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  8900ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  9000ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  9100ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  9200ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  9300ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  9400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  9500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  9600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  9700ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  9800ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  9900ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  10000ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  10100ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  10200ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  10300ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  10400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  10500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  10600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  10700ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  10800ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  10900ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  11000ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  11100ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  11200ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  11300ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  11400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  11500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  11600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  11700ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  11800ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  11900ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  12000ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  12100ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  12200ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  12300ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  12400ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  12500ns
+                WAIT FOR 100 ns;
+                CPU <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  12600ns
+                WAIT FOR 100 ns;
+                CPU <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  12800ns
+                WAIT FOR 200 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  12900ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  13000ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  13100ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  13200ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  13300ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  13400ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  13500ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  13600ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  13700ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  13800ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  13900ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  14000ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  14100ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  14200ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  14300ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  14400ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  14500ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  14600ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  14700ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  14800ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  14900ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  15000ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  15100ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  15200ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  15300ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  15400ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  15500ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  15600ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  15700ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  15800ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  15900ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  16100ns
+                WAIT FOR 200 ns;
+                notPL <= '0';
+                DATA <= "0101";
+                -- -------------------------------------
+                -- -------------  Current Time:  16900ns
+                WAIT FOR 800 ns;
+                notPL <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  17800ns
+                WAIT FOR 900 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  17900ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  18000ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  18100ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  18200ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  18300ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  18400ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  18500ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  18600ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  18700ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  18800ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  18900ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  19000ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  19100ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  19200ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  19300ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  19400ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  19500ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  19600ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  19700ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  19800ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
+                -- -------------------------------------
+                -- -------------  Current Time:  19900ns
+                WAIT FOR 100 ns;
+                CPD <= '1';
+                -- -------------------------------------
+                -- -------------  Current Time:  20000ns
+                WAIT FOR 100 ns;
+                CPD <= '0';
 
                 STD.TEXTIO.write(TX_OUT, string'("Total[]"));
                 STD.TEXTIO.writeline(RESULTS, TX_OUT);

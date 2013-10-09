@@ -33,8 +33,8 @@ port (
 		DATA : in std_logic_vector(3 downto 0);
 		CPD, CPU, MR, notPL : in std_logic;
       OUTPUT : out std_logic_vector(3 downto 0);
-		T : out std_logic_vector(3 downto 0);
-		magic : out std_logic;
+		T, reset, set : out std_logic_vector(3 downto 0);
+		magic, and_4 ,and_5, and_6 : out std_logic;
 		notTCD, notTCU : out std_logic
 	);
 
@@ -77,7 +77,7 @@ Trigger_1 : T_trigger_Modified port map(s_notT(1), s_notMR, s_notRightR(1), s_SE
 
 --Infrastructure for trigger 2
 s_SET(2) <= not(DATA(2) and s_PL and s_notMR);
-s_and_2 <= s_notAnd_magic and s_notCPD and s_notOUTPUT(1);
+s_and_2 <= s_notAnd_magic and s_notCPD and s_notOUTPUT(0) and s_notOUTPUT(1);
 s_and_3 <= s_OUTPUT(0) and s_OUTPUT(1) and s_notCPU;
 s_notT(2) <= s_and_2 or s_and_3;
 s_notRightR(2) <= not(s_SET(2) and s_PL);
@@ -85,7 +85,7 @@ Trigger_2 : T_trigger_Modified port map(s_notT(2), s_notMR, s_notRightR(2), s_SE
 --
 
 --Infrastructure for trigger 3
-s_SET(2) <= not(DATA(3) and s_PL and s_notMR);
+s_SET(3) <= not(DATA(3) and s_PL and s_notMR);
 s_and_4 <= s_notCPD and s_notOUTPUT(0) and s_notOUTPUT(1) and s_notOUTPUT(2);
 s_and_5 <= s_OUTPUT(0) and s_OUTPUT(3) and s_notCPU;
 s_and_6 <= s_OUTPUT(0) and S_OUTPUT(1) and S_OUTPUT(2) and s_notCPU;
@@ -111,6 +111,14 @@ OUTPUT <= s_OUTPUT;
 T <= s_notT;
 
 magic <= s_notAnd_magic;
+
+reset <= s_notRightR;
+
+set <= s_SET;
+
+and_4 <= s_and_4;
+and_5 <= s_and_5;
+and_6 <= s_and_6;
 
 end Behavioral;
 
