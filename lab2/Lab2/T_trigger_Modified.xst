@@ -1,4 +1,0 @@
-set -tmpdir "./xst/projnav.tmp"
-elaborate
--ifn T_trigger_Modified.prj
--ifmt mixed

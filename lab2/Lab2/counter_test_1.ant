@@ -5,10 +5,10 @@
 --   ____  ____ 
 --  /   /\/   / 
 -- /___/  \  /    Vendor: Xilinx 
--- \   \   \/     Version : 10.1.03
+-- \   \   \/     Version : 10.1
 --  \   \         Application : ISE
 --  /   /         Filename : counter_test_1.ant
--- /___/   /\     Timestamp : Tue Oct 08 19:58:02 2013
+-- /___/   /\     Timestamp : Sat Oct 19 23:39:36 2013
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -28,7 +28,7 @@ ENTITY counter_test_1 IS
 END counter_test_1;
 
 ARCHITECTURE testbench_arch OF counter_test_1 IS
-    FILE RESULTS: TEXT OPEN WRITE_MODE IS "C:\Temp\lab2\Lab2\counter_test_1.ano";
+    FILE RESULTS: TEXT OPEN WRITE_MODE IS "D:\Projects\HardwareDesign\lab2\Lab2\counter_test_1.ano";
 
     COMPONENT Up_Down_counter
         PORT (
@@ -38,13 +38,6 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
             MR : In std_logic;
             notPL : In std_logic;
             OUTPUT : Out std_logic_vector (3 DownTo 0);
-            T : Out std_logic_vector (3 DownTo 0);
-            reset : Out std_logic_vector (3 DownTo 0);
-            set : Out std_logic_vector (3 DownTo 0);
-            magic : Out std_logic;
-            and_4 : Out std_logic;
-            and_5 : Out std_logic;
-            and_6 : Out std_logic;
             notTCD : Out std_logic;
             notTCU : Out std_logic
         );
@@ -56,13 +49,6 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
     SIGNAL MR : std_logic := '0';
     SIGNAL notPL : std_logic := '0';
     SIGNAL OUTPUT : std_logic_vector (3 DownTo 0) := "0000";
-    SIGNAL T : std_logic_vector (3 DownTo 0) := "0000";
-    SIGNAL reset : std_logic_vector (3 DownTo 0) := "0000";
-    SIGNAL set : std_logic_vector (3 DownTo 0) := "0000";
-    SIGNAL magic : std_logic := '0';
-    SIGNAL and_4 : std_logic := '0';
-    SIGNAL and_5 : std_logic := '0';
-    SIGNAL and_6 : std_logic := '0';
     SIGNAL notTCD : std_logic := '0';
     SIGNAL notTCU : std_logic := '0';
 
@@ -78,13 +64,6 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
             MR => MR,
             notPL => notPL,
             OUTPUT => OUTPUT,
-            T => T,
-            reset => reset,
-            set => set,
-            magic => magic,
-            and_4 => and_4,
-            and_5 => and_5,
-            and_6 => and_6,
             notTCD => notTCD,
             notTCU => notTCU
         );
@@ -102,111 +81,6 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
                 STD.TEXTIO.write(TX_LOC, TX_TIME);
                 STD.TEXTIO.write(TX_LOC, string'(", OUTPUT, "));
                 IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, OUTPUT);
-                STD.TEXTIO.write(TX_LOC, string'("]"));
-                TX_STR(TX_LOC.all'range) := TX_LOC.all;
-                STD.TEXTIO.writeline(RESULTS, TX_LOC);
-                STD.TEXTIO.Deallocate(TX_LOC);
-            END;
-            PROCEDURE ANNOTATE_T(
-                TX_TIME : INTEGER
-            ) IS
-                VARIABLE TX_STR : String(1 to 4096);
-                VARIABLE TX_LOC : LINE;
-            BEGIN
-                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
-                STD.TEXTIO.write(TX_LOC, TX_TIME);
-                STD.TEXTIO.write(TX_LOC, string'(", T, "));
-                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, T);
-                STD.TEXTIO.write(TX_LOC, string'("]"));
-                TX_STR(TX_LOC.all'range) := TX_LOC.all;
-                STD.TEXTIO.writeline(RESULTS, TX_LOC);
-                STD.TEXTIO.Deallocate(TX_LOC);
-            END;
-            PROCEDURE ANNOTATE_reset(
-                TX_TIME : INTEGER
-            ) IS
-                VARIABLE TX_STR : String(1 to 4096);
-                VARIABLE TX_LOC : LINE;
-            BEGIN
-                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
-                STD.TEXTIO.write(TX_LOC, TX_TIME);
-                STD.TEXTIO.write(TX_LOC, string'(", reset, "));
-                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, reset);
-                STD.TEXTIO.write(TX_LOC, string'("]"));
-                TX_STR(TX_LOC.all'range) := TX_LOC.all;
-                STD.TEXTIO.writeline(RESULTS, TX_LOC);
-                STD.TEXTIO.Deallocate(TX_LOC);
-            END;
-            PROCEDURE ANNOTATE_set(
-                TX_TIME : INTEGER
-            ) IS
-                VARIABLE TX_STR : String(1 to 4096);
-                VARIABLE TX_LOC : LINE;
-            BEGIN
-                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
-                STD.TEXTIO.write(TX_LOC, TX_TIME);
-                STD.TEXTIO.write(TX_LOC, string'(", set, "));
-                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, set);
-                STD.TEXTIO.write(TX_LOC, string'("]"));
-                TX_STR(TX_LOC.all'range) := TX_LOC.all;
-                STD.TEXTIO.writeline(RESULTS, TX_LOC);
-                STD.TEXTIO.Deallocate(TX_LOC);
-            END;
-            PROCEDURE ANNOTATE_magic(
-                TX_TIME : INTEGER
-            ) IS
-                VARIABLE TX_STR : String(1 to 4096);
-                VARIABLE TX_LOC : LINE;
-            BEGIN
-                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
-                STD.TEXTIO.write(TX_LOC, TX_TIME);
-                STD.TEXTIO.write(TX_LOC, string'(", magic, "));
-                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, magic);
-                STD.TEXTIO.write(TX_LOC, string'("]"));
-                TX_STR(TX_LOC.all'range) := TX_LOC.all;
-                STD.TEXTIO.writeline(RESULTS, TX_LOC);
-                STD.TEXTIO.Deallocate(TX_LOC);
-            END;
-            PROCEDURE ANNOTATE_and_4(
-                TX_TIME : INTEGER
-            ) IS
-                VARIABLE TX_STR : String(1 to 4096);
-                VARIABLE TX_LOC : LINE;
-            BEGIN
-                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
-                STD.TEXTIO.write(TX_LOC, TX_TIME);
-                STD.TEXTIO.write(TX_LOC, string'(", and_4, "));
-                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, and_4);
-                STD.TEXTIO.write(TX_LOC, string'("]"));
-                TX_STR(TX_LOC.all'range) := TX_LOC.all;
-                STD.TEXTIO.writeline(RESULTS, TX_LOC);
-                STD.TEXTIO.Deallocate(TX_LOC);
-            END;
-            PROCEDURE ANNOTATE_and_5(
-                TX_TIME : INTEGER
-            ) IS
-                VARIABLE TX_STR : String(1 to 4096);
-                VARIABLE TX_LOC : LINE;
-            BEGIN
-                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
-                STD.TEXTIO.write(TX_LOC, TX_TIME);
-                STD.TEXTIO.write(TX_LOC, string'(", and_5, "));
-                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, and_5);
-                STD.TEXTIO.write(TX_LOC, string'("]"));
-                TX_STR(TX_LOC.all'range) := TX_LOC.all;
-                STD.TEXTIO.writeline(RESULTS, TX_LOC);
-                STD.TEXTIO.Deallocate(TX_LOC);
-            END;
-            PROCEDURE ANNOTATE_and_6(
-                TX_TIME : INTEGER
-            ) IS
-                VARIABLE TX_STR : String(1 to 4096);
-                VARIABLE TX_LOC : LINE;
-            BEGIN
-                STD.TEXTIO.write(TX_LOC, string'("Annotate["));
-                STD.TEXTIO.write(TX_LOC, TX_TIME);
-                STD.TEXTIO.write(TX_LOC, string'(", and_6, "));
-                IEEE.STD_LOGIC_TEXTIO.write(TX_LOC, and_6);
                 STD.TEXTIO.write(TX_LOC, string'("]"));
                 TX_STR(TX_LOC.all'range) := TX_LOC.all;
                 STD.TEXTIO.writeline(RESULTS, TX_LOC);
@@ -245,26 +119,12 @@ ARCHITECTURE testbench_arch OF counter_test_1 IS
         BEGIN
             WAIT for 1 fs;
             ANNOTATE_OUTPUT(0);
-            ANNOTATE_T(0);
-            ANNOTATE_reset(0);
-            ANNOTATE_set(0);
-            ANNOTATE_magic(0);
-            ANNOTATE_and_4(0);
-            ANNOTATE_and_5(0);
-            ANNOTATE_and_6(0);
             ANNOTATE_notTCD(0);
             ANNOTATE_notTCU(0);
             ANNO_LOOP : LOOP
                 WAIT for 50 ns;
                 TX_TIME := TX_TIME + 50;
                 ANNOTATE_OUTPUT(TX_TIME);
-                ANNOTATE_T(TX_TIME);
-                ANNOTATE_reset(TX_TIME);
-                ANNOTATE_set(TX_TIME);
-                ANNOTATE_magic(TX_TIME);
-                ANNOTATE_and_4(TX_TIME);
-                ANNOTATE_and_5(TX_TIME);
-                ANNOTATE_and_6(TX_TIME);
                 ANNOTATE_notTCD(TX_TIME);
                 ANNOTATE_notTCU(TX_TIME);
                 WAIT for 50 ns;
