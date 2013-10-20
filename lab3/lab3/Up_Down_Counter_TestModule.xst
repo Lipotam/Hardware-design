@@ -1,4 +1,0 @@
-set -tmpdir "./xst/projnav.tmp"
-elaborate
--ifn Up_Down_Counter_TestModule.prj
--ifmt mixed
