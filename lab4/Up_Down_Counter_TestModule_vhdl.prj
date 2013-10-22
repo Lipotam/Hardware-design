@@ -1,0 +1,4 @@
+vhdl work "D:\BSUIR\Projects\HardwareDesign\lab3\lab3\JK_trigger.vhd"
+vhdl work "D:\BSUIR\Projects\HardwareDesign\lab3\lab3\T_trigger_Modified.vhd"
+vhdl work "D:\BSUIR\Projects\HardwareDesign\lab3\lab3\Up_Down_counter.vhd"
+vhdl work "D:\BSUIR\Projects\HardwareDesign\lab3\lab3\Up_Down_Counter_TestModule.vhd"

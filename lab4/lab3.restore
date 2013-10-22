@@ -836,11 +836,7 @@ proc restore { { project_dir "" } } {
   } "A problem occured while restoring project settings."
 
   set user_files { 
-      "Device1.vhd" 
-      "Device2.vhd" 
       "JK_trigger.vhd" 
-      "Lab1_first_test_module.vhd" 
-      "Lab1_second_test_module.vhd" 
       "T_trigger.vhd" 
       "T_trigger_Modified.vhd" 
       "Up_Down_Counter_TestModule.vhd" 
