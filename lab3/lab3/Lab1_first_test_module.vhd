@@ -80,6 +80,8 @@ coder : Device1 port map (input, output, output_v_signal);
 			end if;
 			i := i + 1;
 		end loop; 
+		
+		assert false report "simulation finished" severity failure;
    end process;
 
 end Behavioral;

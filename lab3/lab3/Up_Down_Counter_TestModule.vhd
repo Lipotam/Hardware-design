@@ -108,6 +108,7 @@ begin
 		i := i + 1;
 	
 	end loop;	
+	assert false report "simulation finished" severity failure;
 end process;
 
 end Behavioral;
