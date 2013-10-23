@@ -38,34 +38,34 @@ end JK_trigger;
 
 architecture Behavioral of JK_trigger is
 
+signal qtemp,qbartemp : std_logic :='0';
+
 begin
 
-proc1 : process (R, S, CLK, J, K)
-	variable RS, JK : std_logic_vector ( 1 downto 0);
-	variable Qtmp : std_logic := '0';
-	begin	
-		RS := (R & S);		
-		JK := (J & K); 
-		case RS is
-			when "01" => Qtmp := '0';
-			when "10" => Qtmp := '1';			
-			when "11" => 
-				if clk'event and CLK = '1' then
-					case (JK) is
-						when "11" =>
-							Qtmp := not Qtmp;
-						when "10" =>
-							Qtmp := '1';
-						when "01" =>
-							Qtmp := '0';
-						when others =>
-							null;
-					end case;
-				end if;
-			when others => null;
-		end case;				
-		Q <= Qtmp;
-		notQ <= not Qtmp;
-	end process proc1;
+Q <= qtemp;
+notQ <= qbartemp;
 
+process(CLK,R,S)
+begin
+	if(R = '0') then           --Reset the output.
+			qtemp <= '0';
+			qbartemp <= '1';
+	elsif (S = '0') then		
+			qtemp <= '1';
+			qbartemp <= '0';
+	elsif( rising_edge(clk) ) then
+		if(J='0' and K='0') then       --No change in the output
+			NULL;
+		elsif(J='0' and K='1') then    --Set the output.
+			qtemp <= '0';
+			qbartemp <= '1';
+		elsif(J='1' and K='0') then    --Reset the output.
+			qtemp <= '1';
+			qbartemp <= '0';
+		else                           --Toggle the output.
+			qtemp <= not qtemp;
+			qbartemp <= not qbartemp;
+		end if;
+	end if;
+end process;
 end Behavioral;

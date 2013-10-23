@@ -1,5 +1,5 @@
 CommandLine
-C:\Xilinx\10.1\ISE\bin\nt\unwrapped\xst.exe -ise D:/OwnProjects/HardwareDesign/lab3/lab3/lab3.ise -intstyle ise -ifn Lab1_second_test_module.xst -ofn Lab1_second_test_module.stx -finalclean 1
+C:\Xilinx\10.1\ISE\bin\nt\unwrapped\xst.exe -ise C:/Temp/lab3/lab3/lab3.ise -intstyle ise -ifn Full_Device.xst -ofn Full_Device.stx -finalclean 1
 s
 FormatString
 xst [-ifn <InputFile>] [-ofn <OutputFile>] [-ise <iseProjectFile>] [--quiet] [-intstyle <Style>] [--deb <DebugLevel>] [--finalclean <Clean>] [--PcubeFlow] [--globOptFlow] [--XstNtrc]
