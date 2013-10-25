@@ -49,7 +49,7 @@ end component;
 
 component CLK_counter is
 	generic(
-		n: natural :=2
+		n: natural :=10
 	);
 	port(	
 		clock:	in std_logic;

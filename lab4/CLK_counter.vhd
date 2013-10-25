@@ -28,28 +28,26 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --use UNISIM.VComponents.all;
 
 entity CLK_counter is
-generic(n: natural :=2);
-port(	clock:	in std_logic;
-	clear:	in std_logic;
-	count:	in std_logic;
-	Q:	out std_logic
-);
+    Port (
+        clock : in  STD_LOGIC;
+        Q: out STD_LOGIC
+    );
 end CLK_counter;
 
 architecture Behavioral of CLK_counter is
-  signal Pre_Q: std_logic_vector(n-1 downto 0);
+    signal temporal: STD_LOGIC := '0';
+    signal counter : integer range 0 to 50000000 := 0;
 begin
-
-process(clock, count, clear)
-    begin
-	if clear = '1' then
- 	    Pre_Q <= Pre_Q - Pre_Q;
-	elsif (clock='1' and clock'event) then
-	    if count = '1' then
-		Pre_Q <= Pre_Q + 1;
-	    end if;
-	end if;
-end process;	
-Q <= Pre_Q(n-1);
+    frequency_divider: process (clock) begin
+        if rising_edge(clock) then
+            if (counter = 50000000) then
+                temporal <= NOT(temporal);
+                counter <= 0;
+            else
+                counter <= counter + 1;
+            end if;
+        end if;
+    end process;
+    
+    Q <= temporal;
 end Behavioral;
-
