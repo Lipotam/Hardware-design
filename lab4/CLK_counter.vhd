@@ -40,7 +40,8 @@ architecture Behavioral of CLK_counter is
 begin
     frequency_divider: process (clock) begin
         if rising_edge(clock) then
-            if (counter = 50000000) then
+            --if (counter = 50000000) then
+            if (counter = 4) then
                 temporal <= NOT(temporal);
                 counter <= 0;
             else

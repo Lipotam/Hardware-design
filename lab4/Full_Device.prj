@@ -1,5 +1,0 @@
-vhdl work "JK_trigger.vhd"
-vhdl work "T_trigger_Modified.vhd"
-vhdl work "Up_Down_counter.vhd"
-vhdl work "CLK_counter.vhd"
-vhdl work "Full_Device.vhd"

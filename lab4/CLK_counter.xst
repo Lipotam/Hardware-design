@@ -1,4 +1,0 @@
-set -tmpdir "./xst/projnav.tmp"
-elaborate
--ifn CLK_counter.prj
--ifmt mixed

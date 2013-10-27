@@ -48,13 +48,8 @@ component Up_Down_counter is
 end component;
 
 component CLK_counter is
-	generic(
-		n: natural :=10
-	);
 	port(	
 		clock:	in std_logic;
-		clear:	in std_logic;
-		count:	in std_logic;
 		Q:	out std_logic
 	);
 end component;
@@ -66,9 +61,8 @@ signal output_vector : std_logic_vector(3 downto 0);
 
 begin
 
-CLK_Counter_module : CLK_counter generic map (22 )
-               port map ( CLK, '0','1',clk_count);
-	
+CLK_Counter_module : CLK_counter port map ( CLK, clk_count);
+
 cpd_in <= not (clk_count and CPD);
 cpu_in <= not (clk_count and CPU);
 	
