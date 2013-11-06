@@ -7,6 +7,9 @@ USE ieee.std_logic_arith.ALL;
 LIBRARY std;
 USE std.textio.ALL; 
 
+library simprim;
+use simprim.VComponents.all;
+
 entity Full_Shema_test_module is
 end Full_Shema_test_module;
 
@@ -30,7 +33,7 @@ file Test_File : text open read_mode is "Full_shema_test_file.txt";
 
 begin
 
-full_shema: Full_Device port map (DATA, CLK_input, CPD, CPU, MR, notPL, OUTPUT, notTCD, notTCU);
+UUT: Full_Device port map (DATA, CLK_input, CPD, CPU, MR, notPL, OUTPUT, notTCD, notTCU);
 
 stim_proc: process
 	variable file_status : file_open_status;

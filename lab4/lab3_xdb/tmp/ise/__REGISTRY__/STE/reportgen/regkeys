@@ -1,0 +1,6 @@
+CommandLine
+D:\BSUIR\WebPack\ISE\bin\nt\unwrapped\reportgen.exe -ise D:/BSUIR/Projects/HardwareDesign/lab4/lab3.ise -intstyle ise -delay -o Full_Device Full_Device.ncd
+s
+FormatString
+reportgen [-intstyle ise|xflow|silent] [-delay] [-clock_regions] [-unrouted_nets] [--dirt] [-pad [-padfmt pad|csv|text|all] [-padcolsort <displaystr>]] [-o <outfile>] <infile[.ncd]> [<constraintsfile[.pcf]>]
+s
