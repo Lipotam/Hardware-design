@@ -138,9 +138,9 @@ BEGIN
 		j:=0;
 		while j < 10 loop
 			CLK_input <= '1';
-			wait for 10 ns;
+			wait for 40 ns;
 			CLK_input <= '0';
-			wait for 10 ns;
+			wait for 40 ns;
 			j := j + 1;
 		end loop;
 		

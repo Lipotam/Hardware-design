@@ -1,0 +1,18 @@
+# Синхросигнал 50Мгц от внешнего генератора
+net "CLK" loc = r8;
+# Светодиодные индикаторы
+net "notTCD" loc = n6;
+net "notTCU" loc = p5;
+net "OUTPUT(0)" loc = j15;
+net "OUTPUT(1)" loc = h16;
+net "OUTPUT(2)" loc = c15;
+net "OUTPUT(3)" loc = e15;
+# Переключатели
+net "CPD" loc = t10;
+net "CPU" loc = t9;
+net "MR" loc = t8;
+net "notPL" loc = t7;
+net "DATA(0)" loc = t6;
+net "DATA(1)" loc = t5;
+net "DATA(2)" loc = c13;
+net "DATA(3)" loc = b13;

@@ -1,0 +1,59 @@
+Release 10.1 ngdbuild K.31 (nt)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\10.1\ISE\bin\nt\unwrapped\ngdbuild.exe -ise
+D:/OwnProjects/HardwareDesign/lab4/lab3.ise -intstyle ise -dd _ngo -nt timestamp
+-i -p xc2s200-fg256-5 Full_Device.ngc Full_Device.ngd
+
+Reading NGO file "D:/OwnProjects/HardwareDesign/lab4/Full_Device.ngc" ...
+Reading in constraint information from 'Device_UCF.ucf'...
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+WARNING:NgdBuild:1012 - The constraint <net "OUTPUT(0)" loc = j15;>
+   [Device_UCF.ucf(6)] is overridden on the design object OUTPUT<0> by the
+   constraint <NET "OUTPUT<0>" LOC = J15;> [Device_UCF.ucf(25)].
+WARNING:NgdBuild:1012 - The constraint <net "OUTPUT(1)" loc = h16;>
+   [Device_UCF.ucf(7)] is overridden on the design object OUTPUT<1> by the
+   constraint <NET "OUTPUT<1>" LOC = H16;> [Device_UCF.ucf(26)].
+WARNING:NgdBuild:1012 - The constraint <net "OUTPUT(2)" loc = c15;>
+   [Device_UCF.ucf(8)] is overridden on the design object OUTPUT<2> by the
+   constraint <NET "OUTPUT<2>" LOC = C15;> [Device_UCF.ucf(27)].
+WARNING:NgdBuild:1012 - The constraint <net "OUTPUT(3)" loc = e15;>
+   [Device_UCF.ucf(9)] is overridden on the design object OUTPUT<3> by the
+   constraint <NET "OUTPUT<3>" LOC = E15;> [Device_UCF.ucf(28)].
+WARNING:NgdBuild:1012 - The constraint <net "DATA(0)" loc = t6;>
+   [Device_UCF.ucf(15)] is overridden on the design object DATA<0> by the
+   constraint <NET "DATA<0>" LOC = T6;> [Device_UCF.ucf(21)].
+WARNING:NgdBuild:1012 - The constraint <net "DATA(1)" loc = t5;>
+   [Device_UCF.ucf(16)] is overridden on the design object DATA<1> by the
+   constraint <NET "DATA<1>" LOC = T5;> [Device_UCF.ucf(22)].
+WARNING:NgdBuild:1012 - The constraint <net "DATA(2)" loc = c13;>
+   [Device_UCF.ucf(17)] is overridden on the design object DATA<2> by the
+   constraint <NET "DATA<2>" LOC = C13;> [Device_UCF.ucf(23)].
+WARNING:NgdBuild:1012 - The constraint <net "DATA(3)" loc = b13;>
+   [Device_UCF.ucf(18)] is overridden on the design object DATA<3> by the
+   constraint <NET "DATA<3>" LOC = B13;> [Device_UCF.ucf(24)].
+Done...
+Checking Partitions ...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   8
+
+Total memory usage is 108288 kilobytes
+
+Writing NGD file "Full_Device.ngd" ...
+
+Writing NGDBUILD log file "Full_Device.bld"...

@@ -845,8 +845,7 @@ proc restore { { project_dir "" } } {
       "Test_for_full_shema.vhd" 
       "Up_Down_Counter_TestModule.vhd" 
       "Up_Down_counter.vhd" 
-      "clk_counter_test.vhd" 
-      "sdfsdfasdf.vhd"}
+      "clk_counter_test.vhd"}
 
   HandleException {
     AddUserFiles $iProjHelper $user_files
@@ -1170,7 +1169,7 @@ proc restore { { project_dir "" } } {
       "B" "" "" "" "PROP_ModelSimProcWin" "false" 
       "B" "" "" "" "PROP_ModelSimSignalWin" "true" 
       "B" "" "" "" "PROP_ModelSimSimRes" "Default (1 ps)" 
-      "B" "" "" "" "PROP_ModelSimSimRunTime_tb" "20000ns" 
+      "B" "" "" "" "PROP_ModelSimSimRunTime_tb" "110ms" 
       "B" "" "" "" "PROP_ModelSimSimRunTime_tbw" "1000ns" 
       "B" "" "" "" "PROP_ModelSimSourceWin" "false" 
       "B" "" "" "" "PROP_ModelSimStructWin" "true" 
