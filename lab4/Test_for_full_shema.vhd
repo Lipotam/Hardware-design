@@ -117,7 +117,7 @@ BEGIN
 	variable j : integer := 1; 
    begin		
       -- hold reset state for 100ms.
-     -- wait for 100ms;	
+      wait for 100ns;	
 
 --      wait for CLK_period*10;
 
@@ -138,9 +138,9 @@ BEGIN
 		j:=0;
 		while j < 10 loop
 			CLK_input <= '1';
-			wait for 1 ps;
+			wait for 10 ns;
 			CLK_input <= '0';
-			wait for 1 ps;
+			wait for 10 ns;
 			j := j + 1;
 		end loop;
 		
