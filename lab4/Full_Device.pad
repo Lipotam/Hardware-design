@@ -1,7 +1,7 @@
 Release 10.1 - par K.31 (nt)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
-Thu Nov 14 14:26:24 2013
+Fri Nov 15 13:18:08 2013
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -21,14 +21,14 @@ Pinout by Pin Number:
 Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|Drive (mA)|Slew Rate|Termination|IOB Delay|Voltage|Constraint|DCI Value|IO Register|Signal Integrity|
 A1|||GND|||||||||||||
 A2||IOB|IO|UNUSED||7||||||||||
-A3||IOB|IO_VREF_0|UNUSED||0||||||||||
-A4||IOB|IO|UNUSED||0||||||||||
-A5||IOB|IO|UNUSED||0||||||||||
-A6||IOB|IO|UNUSED||0||||||||||
-A7||IOB|IO|UNUSED||0||||||||||
-A8||IOB|IO|UNUSED||1||||||||||
-A9||IOB|IO|UNUSED||1||||||||||
-A10||IOB|IO|UNUSED||1||||||||||
+A3|s_notRightR_o<2>|IOB|IO_VREF_0|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+A4|s_notOUTPUT_o<2>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+A5|s_SET_o<2>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+A6|s_notCPU_o|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+A7|s_and_4_o|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+A8|s_and_5_o|IOB|IO|OUTPUT|LVTTL*|1|12|SLOW|NONE**|||||NO|NONE|
+A9|s_notCPD_o|IOB|IO|OUTPUT|LVTTL*|1|12|SLOW|NONE**|||||NO|NONE|
+A10|s_PL_o|IOB|IO|OUTPUT|LVTTL*|1|12|SLOW|NONE**|||||NO|NONE|
 A11||IOB|IO|UNUSED||1||||||||||
 A12||IOB|IO|UNUSED||1||||||||||
 A13||IOB|IO|UNUSED||1||||||||||
@@ -38,13 +38,13 @@ A16|||GND|||||||||||||
 B1||IOB|IO_VREF_7|UNUSED||7||||||||||
 B2|||GND|||||||||||||
 B3||IOB|IO|UNUSED||0||||||||||
-B4||IOB|IO_VREF_0|UNUSED||0||||||||||
-B5||IOB|IO|UNUSED||0||||||||||
-B6||IOB|IO|UNUSED||0||||||||||
-B7||IOB|IO_VREF_0|UNUSED||0||||||||||
+B4|s_notOUTPUT_o<1>|IOB|IO_VREF_0|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+B5|s_SET_o<0>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+B6|s_notT_o<1>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+B7|s_and_2_o|IOB|IO_VREF_0|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
 B8||GCLKIOB|GCK3|UNUSED||0||||||||||
-B9||IOB|IO_VREF_1|UNUSED||1||||||||||
-B10||IOB|IO|UNUSED||1||||||||||
+B9|s_notAnd_magic_o|IOB|IO_VREF_1|OUTPUT|LVTTL*|1|12|SLOW|NONE**|||||NO|NONE|
+B10|s_notMR_o|IOB|IO|OUTPUT|LVTTL*|1|12|SLOW|NONE**|||||NO|NONE|
 B11||IOB|IO|UNUSED||1||||||||||
 B12||IOB|IO|UNUSED||1||||||||||
 B13|DATA<3>|IOB|IO_CS|INPUT|LVTTL*|1||||NONE||LOCATED||NO|NONE|
@@ -55,10 +55,10 @@ C1||IOB|IO_VREF_7|UNUSED||7||||||||||
 C2||IOB|IO|UNUSED||7||||||||||
 C3|||VCCINT||||||||2.5|||||
 C4|||TCK|||||||||||||
-C5||IOB|IO|UNUSED||0||||||||||
-C6||IOB|IO_VREF_0|UNUSED||0||||||||||
-C7||IOB|IO|UNUSED||0||||||||||
-C8||IOB|IO|UNUSED||0||||||||||
+C5|s_notRightR_o<1>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+C6|s_SET_o<1>|IOB|IO_VREF_0|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+C7|s_SET_o<3>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+C8|s_notT_o<2>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
 C9||GCLKIOB|GCK2|UNUSED||1||||||||||
 C10||IOB|IO|UNUSED||1||||||||||
 C11||IOB|IO_VREF_1|UNUSED||1||||||||||
@@ -71,12 +71,12 @@ D1||IOB|IO_VREF_7|UNUSED||7||||||||||
 D2||IOB|IO|UNUSED||7||||||||||
 D3|||TMS|||||||||||||
 D4|||VCCINT||||||||2.5|||||
-D5||IOB|IO|UNUSED||0||||||||||
-D6||IOB|IO|UNUSED||0||||||||||
-D7||IOB|IO|UNUSED||0||||||||||
-D8||IOB|IO|UNUSED||0||||||||||
-D9||IOB|IO|UNUSED||1||||||||||
-D10||IOB|IO|UNUSED||1||||||||||
+D5|s_notRightR_o<3>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+D6|s_notOUTPUT_o<3>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+D7|s_notT_o<3>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+D8|s_and_3_o|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+D9|s_and_6_o|IOB|IO|OUTPUT|LVTTL*|1|12|SLOW|NONE**|||||NO|NONE|
+D10|s_and_1_o|IOB|IO|OUTPUT|LVTTL*|1|12|SLOW|NONE**|||||NO|NONE|
 D11||IOB|IO|UNUSED||1||||||||||
 D12||IOB|IO|UNUSED||1||||||||||
 D13|||VCCINT||||||||2.5|||||
@@ -84,15 +84,15 @@ D14||IOB|IO_DIN_D0|UNUSED||2||||||||||
 D15|||CCLK|||||||||||||
 D16||IOB|IO|UNUSED||2||||||||||
 E1||IOB|IO|UNUSED||7||||||||||
-E2||IOB|IO|UNUSED||7||||||||||
+E2|s_notRightR_o<0>|IOB|IO|OUTPUT|LVTTL*|7|12|SLOW|NONE**|||||NO|NONE|
 E3||IOB|IO|UNUSED||7||||||||||
 E4||IOB|IO|UNUSED||7||||||||||
 E5|||VCCINT||||||||2.5|||||
-E6||IOB|IO|UNUSED||0||||||||||
-E7||IOB|IO|UNUSED||0||||||||||
-E8|||VCCO_0|||0|||||any******|||||
-E9|||VCCO_1|||1|||||any******|||||
-E10||IOB|IO|UNUSED||1||||||||||
+E6|s_notOUTPUT_o<0>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+E7|s_notT_o<0>|IOB|IO|OUTPUT|LVTTL*|0|12|SLOW|NONE**|||||NO|NONE|
+E8|||VCCO_0|||0|||||3.30|||||
+E9|||VCCO_1|||1|||||3.30|||||
+E10|s_and_0_o|IOB|IO|OUTPUT|LVTTL*|1|12|SLOW|NONE**|||||NO|NONE|
 E11||IOB|IO_VREF_1|UNUSED||1||||||||||
 E12|||VCCINT||||||||2.5|||||
 E13||IOB|IO_VREF_2|UNUSED||2||||||||||
@@ -106,8 +106,8 @@ F4||IOB|IO|UNUSED||7||||||||||
 F5||IOB|IO|UNUSED||7||||||||||
 F6|||GND|||||||||||||
 F7|||GND|||||||||||||
-F8|||VCCO_0|||0|||||any******|||||
-F9|||VCCO_1|||1|||||any******|||||
+F8|||VCCO_0|||0|||||3.30|||||
+F9|||VCCO_1|||1|||||3.30|||||
 F10|||GND|||||||||||||
 F11|||GND|||||||||||||
 F12||IOB|IO|UNUSED||2||||||||||
@@ -135,8 +135,8 @@ H1||IOB|IO|UNUSED||6||||||||||
 H2||IOB|IO|UNUSED||7||||||||||
 H3||IOB|IO_VREF_7|UNUSED||7||||||||||
 H4||IOB|IO|UNUSED||7||||||||||
-H5|||VCCO_7|||7|||||any******|||||
-H6|||VCCO_7|||7|||||any******|||||
+H5|||VCCO_7|||7|||||3.30|||||
+H6|||VCCO_7|||7|||||3.30|||||
 H7|||GND|||||||||||||
 H8|||GND|||||||||||||
 H9|||GND|||||||||||||

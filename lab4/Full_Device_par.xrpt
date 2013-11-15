@@ -5,11 +5,11 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Thu Nov 14 14:26:23 2013">
+  <application stringID="par" timeStamp="Fri Nov 15 13:18:07 2013">
     <task stringID="PAR_DEVICE_UTILIZATION">
       <section stringID="PAR_DEVICE_UTLIZATION">
-        <item AVAILABLE="176" dataType="int" stringID="PAR_EXTERNAL_IOB" value="14">
-          <item AVAILABLE="14" dataType="int" stringID="PAR_LOC_IOB" value="14"/>
+        <item AVAILABLE="176" dataType="int" stringID="PAR_EXTERNAL_IOB" value="42">
+          <item AVAILABLE="42" dataType="int" stringID="PAR_LOC_IOB" value="14"/>
         </item>
       </section>
     </task>

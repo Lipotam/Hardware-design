@@ -1,16 +1,16 @@
 Release 10.1 - xst K.31 (nt)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:/OwnProjects/HardwareDesign/lab4/xst/projnav.tmp
+--> Parameter TMPDIR set to D:/BSUIR/Projects/HardwareDesign/lab4/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.07 secs
  
---> Parameter xsthdpdir set to D:/OwnProjects/HardwareDesign/lab4/xst
+--> Parameter xsthdpdir set to D:/BSUIR/Projects/HardwareDesign/lab4/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: Full_Device.prj
 
@@ -106,52 +106,41 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "D:/OwnProjects/HardwareDesign/lab4/JK_trigger.vhd" in Library work.
-Entity <JK_trigger> compiled.
-Entity <JK_trigger> (Architecture <Behavioral>) compiled.
-Compiling vhdl file "D:/OwnProjects/HardwareDesign/lab4/T_trigger_Modified.vhd" in Library work.
-Entity <T_trigger_Modified> compiled.
-Entity <T_trigger_Modified> (Architecture <Behavioral>) compiled.
-Compiling vhdl file "D:/OwnProjects/HardwareDesign/lab4/CLK_counter.vhd" in Library work.
-Entity <CLK_counter> compiled.
-Entity <CLK_counter> (Architecture <Behavioral>) compiled.
-Compiling vhdl file "D:/OwnProjects/HardwareDesign/lab4/Up_Down_counter.vhd" in Library work.
-Entity <Up_Down_counter> compiled.
-Entity <Up_Down_counter> (Architecture <Behavioral>) compiled.
-Compiling vhdl file "D:/OwnProjects/HardwareDesign/lab4/Full_Device.vhd" in Library work.
-Entity <Full_Device> compiled.
-Entity <Full_Device> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "D:/BSUIR/Projects/HardwareDesign/lab4/JK_trigger.vhd" in Library work.
+Architecture behavioral of Entity jk_trigger is up to date.
+Compiling vhdl file "D:/BSUIR/Projects/HardwareDesign/lab4/CLK_counter.vhd" in Library work.
+Architecture behavioral of Entity clk_counter is up to date.
+Compiling vhdl file "D:/BSUIR/Projects/HardwareDesign/lab4/Up_Down_counter.vhd" in Library work.
+Entity <up_down_counter> compiled.
+Entity <up_down_counter> (Architecture <behavioral>) compiled.
+Compiling vhdl file "D:/BSUIR/Projects/HardwareDesign/lab4/Full_Device.vhd" in Library work.
+Architecture behavioral of Entity full_device is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <Full_Device> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <Full_Device> in library <work> (architecture <behavioral>).
 
-Analyzing hierarchy for entity <CLK_counter> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <CLK_counter> in library <work> (architecture <behavioral>).
 
-Analyzing hierarchy for entity <Up_Down_counter> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <Up_Down_counter> in library <work> (architecture <behavioral>).
 
-Analyzing hierarchy for entity <T_trigger_Modified> in library <work> (architecture <Behavioral>).
-
-Analyzing hierarchy for entity <JK_trigger> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <JK_trigger> in library <work> (architecture <behavioral>).
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <Full_Device> in library <work> (Architecture <Behavioral>).
+Analyzing Entity <Full_Device> in library <work> (Architecture <behavioral>).
 Entity <Full_Device> analyzed. Unit <Full_Device> generated.
 
-Analyzing Entity <CLK_counter> in library <work> (Architecture <Behavioral>).
+Analyzing Entity <CLK_counter> in library <work> (Architecture <behavioral>).
 Entity <CLK_counter> analyzed. Unit <CLK_counter> generated.
 
-Analyzing Entity <Up_Down_counter> in library <work> (Architecture <Behavioral>).
+Analyzing Entity <Up_Down_counter> in library <work> (Architecture <behavioral>).
 Entity <Up_Down_counter> analyzed. Unit <Up_Down_counter> generated.
 
-Analyzing Entity <T_trigger_Modified> in library <work> (Architecture <Behavioral>).
-Entity <T_trigger_Modified> analyzed. Unit <T_trigger_Modified> generated.
-
-Analyzing Entity <JK_trigger> in library <work> (Architecture <Behavioral>).
+Analyzing Entity <JK_trigger> in library <work> (Architecture <behavioral>).
 Entity <JK_trigger> analyzed. Unit <JK_trigger> generated.
 
 
@@ -162,7 +151,7 @@ Entity <JK_trigger> analyzed. Unit <JK_trigger> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <CLK_counter>.
-    Related source file is "D:/OwnProjects/HardwareDesign/lab4/CLK_counter.vhd".
+    Related source file is "D:/BSUIR/Projects/HardwareDesign/lab4/CLK_counter.vhd".
     Found 26-bit up counter for signal <counter>.
     Found 1-bit register for signal <temporal>.
     Summary:
@@ -172,7 +161,7 @@ Unit <CLK_counter> synthesized.
 
 
 Synthesizing Unit <JK_trigger>.
-    Related source file is "D:/OwnProjects/HardwareDesign/lab4/JK_trigger.vhd".
+    Related source file is "D:/BSUIR/Projects/HardwareDesign/lab4/JK_trigger.vhd".
 INFO:Xst:1608 - Relative priorities of control signals on register <qbartemp> differ from those commonly found in the selected device family. This will result in additional logic around the register.
     Found 1-bit register for signal <qbartemp>.
     Found 1-bit register for signal <qtemp>.
@@ -181,18 +170,13 @@ INFO:Xst:1608 - Relative priorities of control signals on register <qbartemp> di
 Unit <JK_trigger> synthesized.
 
 
-Synthesizing Unit <T_trigger_Modified>.
-    Related source file is "D:/OwnProjects/HardwareDesign/lab4/T_trigger_Modified.vhd".
-Unit <T_trigger_Modified> synthesized.
-
-
 Synthesizing Unit <Up_Down_counter>.
-    Related source file is "D:/OwnProjects/HardwareDesign/lab4/Up_Down_counter.vhd".
+    Related source file is "D:/BSUIR/Projects/HardwareDesign/lab4/Up_Down_counter.vhd".
 Unit <Up_Down_counter> synthesized.
 
 
 Synthesizing Unit <Full_Device>.
-    Related source file is "D:/OwnProjects/HardwareDesign/lab4/Full_Device.vhd".
+    Related source file is "D:/BSUIR/Projects/HardwareDesign/lab4/Full_Device.vhd".
 Unit <Full_Device> synthesized.
 
 
@@ -211,7 +195,7 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-Loading device for application Rf_Device from file 'v200.nph' in environment C:\Xilinx\10.1\ISE.
+Loading device for application Rf_Device from file 'v200.nph' in environment D:\BSUIR\WebPack\ISE.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -269,17 +253,17 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : NO
 
 Design Statistics
-# IOs                              : 15
+# IOs                              : 43
 
 Cell Usage :
-# BELS                             : 122
+# BELS                             : 139
 #      GND                         : 1
-#      INV                         : 10
+#      INV                         : 12
 #      LUT1                        : 25
-#      LUT2                        : 2
-#      LUT3                        : 10
-#      LUT4                        : 14
-#      LUT4_L                      : 2
+#      LUT2                        : 5
+#      LUT3                        : 19
+#      LUT3_D                      : 1
+#      LUT4                        : 18
 #      MUXCY                       : 32
 #      VCC                         : 1
 #      XORCY                       : 25
@@ -289,9 +273,9 @@ Cell Usage :
 #      FDR                         : 26
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 14
+# IO Buffers                       : 42
 #      IBUF                        : 8
-#      OBUF                        : 6
+#      OBUF                        : 34
 =========================================================================
 
 Device utilization summary:
@@ -299,11 +283,11 @@ Device utilization summary:
 
 Selected Device : 2s200fg256-5 
 
- Number of Slices:                       29  out of   2352     1%  
+ Number of Slices:                       37  out of   2352     1%  
  Number of Slice Flip Flops:             35  out of   4704     0%  
- Number of 4 input LUTs:                 63  out of   4704     1%  
- Number of IOs:                          15
- Number of bonded IOBs:                  15  out of    176     8%  
+ Number of 4 input LUTs:                 80  out of   4704     1%  
+ Number of IOs:                          43
+ Number of bonded IOBs:                  43  out of    176    24%  
  Number of GCLKs:                         1  out of      4    25%  
 
 ---------------------------
@@ -324,15 +308,15 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-----------------------------------------------------------+----------------------------------------------+-------+
-Clock Signal                                              | Clock buffer(FF name)                        | Load  |
-----------------------------------------------------------+----------------------------------------------+-------+
-CLK                                                       | BUFGP                                        | 27    |
-Counter_Module/Trigger_0/T(Counter_Module/Trigger_0/T1:O) | NONE(*)(Counter_Module/Trigger_0/jk/qbartemp)| 2     |
-Counter_Module/Trigger_1/T(Counter_Module/Trigger_1/T31:O)| NONE(*)(Counter_Module/Trigger_1/jk/qbartemp)| 2     |
-Counter_Module/Trigger_2/T(Counter_Module/Trigger_2/T:O)  | NONE(*)(Counter_Module/Trigger_2/jk/qbartemp)| 2     |
-Counter_Module/Trigger_3/T(Counter_Module/Trigger_3/T:O)  | NONE(*)(Counter_Module/Trigger_3/jk/qbartemp)| 2     |
-----------------------------------------------------------+----------------------------------------------+-------+
+---------------------------------------------------+----------------------------------------+-------+
+Clock Signal                                       | Clock buffer(FF name)                  | Load  |
+---------------------------------------------------+----------------------------------------+-------+
+CLK                                                | BUFGP                                  | 27    |
+s_notT_o_0_OBUF(Counter_Module/s_notT_0_not00001:O)| NONE(*)(Counter_Module/Trigger_0/qtemp)| 2     |
+s_notT_o_1_OBUF(Counter_Module/s_notT_1_not00001:O)| NONE(*)(Counter_Module/Trigger_1/qtemp)| 2     |
+s_notT_o_2_OBUF(Counter_Module/s_notT_2_not00001:O)| NONE(*)(Counter_Module/Trigger_2/qtemp)| 2     |
+s_notT_o_3_OBUF(Counter_Module/s_notT_3_not00001:O)| NONE(*)(Counter_Module/Trigger_3/qtemp)| 2     |
+---------------------------------------------------+----------------------------------------+-------+
 (*) These 4 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -340,27 +324,27 @@ INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------------------------------------------+-------------------------------------------+-------+
-Control Signal                                                         | Buffer(FF name)                           | Load  |
------------------------------------------------------------------------+-------------------------------------------+-------+
-Counter_Module/Trigger_0/jk/R_inv(Counter_Module/Trigger_0/jk/R_inv1:O)| NONE(Counter_Module/Trigger_0/jk/qtemp)   | 2     |
-Counter_Module/Trigger_0/jk/S_inv(Counter_Module/Trigger_0/jk/S_inv1:O)| NONE(Counter_Module/Trigger_0/jk/qtemp)   | 2     |
-Counter_Module/Trigger_1/jk/R_inv(Counter_Module/Trigger_1/jk/R_inv1:O)| NONE(Counter_Module/Trigger_1/jk/qbartemp)| 2     |
-Counter_Module/Trigger_1/jk/S_inv(Counter_Module/Trigger_1/jk/S_inv1:O)| NONE(Counter_Module/Trigger_1/jk/qbartemp)| 2     |
-Counter_Module/Trigger_2/jk/R_inv(Counter_Module/Trigger_2/jk/R_inv1:O)| NONE(Counter_Module/Trigger_2/jk/qtemp)   | 2     |
-Counter_Module/Trigger_2/jk/S_inv(Counter_Module/Trigger_2/jk/S_inv1:O)| NONE(Counter_Module/Trigger_2/jk/qtemp)   | 2     |
-Counter_Module/Trigger_3/jk/R_inv(Counter_Module/Trigger_3/jk/R_inv1:O)| NONE(Counter_Module/Trigger_3/jk/qbartemp)| 2     |
-Counter_Module/Trigger_3/jk/S_inv(Counter_Module/Trigger_3/jk/S_inv1:O)| NONE(Counter_Module/Trigger_3/jk/qbartemp)| 2     |
------------------------------------------------------------------------+-------------------------------------------+-------+
+-----------------------------------------------------------------+----------------------------------------+-------+
+Control Signal                                                   | Buffer(FF name)                        | Load  |
+-----------------------------------------------------------------+----------------------------------------+-------+
+Counter_Module/Trigger_0/R_inv(Counter_Module/Trigger_0/R_inv1:O)| NONE(Counter_Module/Trigger_0/qtemp)   | 2     |
+Counter_Module/Trigger_0/S_inv(Counter_Module/Trigger_0/S_inv1:O)| NONE(Counter_Module/Trigger_0/qtemp)   | 2     |
+Counter_Module/Trigger_1/R_inv(Counter_Module/Trigger_1/R_inv1:O)| NONE(Counter_Module/Trigger_1/qtemp)   | 2     |
+Counter_Module/Trigger_1/S_inv(Counter_Module/Trigger_1/S_inv1:O)| NONE(Counter_Module/Trigger_1/qtemp)   | 2     |
+Counter_Module/Trigger_2/R_inv(Counter_Module/Trigger_2/R_inv1:O)| NONE(Counter_Module/Trigger_2/qbartemp)| 2     |
+Counter_Module/Trigger_2/S_inv(Counter_Module/Trigger_2/S_inv1:O)| NONE(Counter_Module/Trigger_2/qbartemp)| 2     |
+Counter_Module/Trigger_3/R_inv(Counter_Module/Trigger_3/R_inv1:O)| NONE(Counter_Module/Trigger_3/qbartemp)| 2     |
+Counter_Module/Trigger_3/S_inv(Counter_Module/Trigger_3/S_inv1:O)| NONE(Counter_Module/Trigger_3/qbartemp)| 2     |
+-----------------------------------------------------------------+----------------------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 8.805ns (Maximum Frequency: 113.572MHz)
-   Minimum input arrival time before clock: 8.409ns
-   Maximum output required time after clock: 12.695ns
-   Maximum combinational path delay: 11.877ns
+   Minimum period: 10.407ns (Maximum Frequency: 96.089MHz)
+   Minimum input arrival time before clock: 10.069ns
+   Maximum output required time after clock: 15.768ns
+   Maximum combinational path delay: 14.740ns
 
 Timing Detail:
 --------------
@@ -396,311 +380,321 @@ Delay:               8.805ns (Levels of Logic = 8)
                                        (44.5% logic, 55.5% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'Counter_Module/Trigger_0/T'
-  Clock period: 5.698ns (frequency: 175.500MHz)
+Timing constraint: Default period analysis for Clock 's_notT_o_0_OBUF'
+  Clock period: 5.898ns (frequency: 169.549MHz)
   Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Delay:               5.698ns (Levels of Logic = 1)
-  Source:            Counter_Module/Trigger_0/jk/qtemp (FF)
-  Destination:       Counter_Module/Trigger_0/jk/qtemp (FF)
-  Source Clock:      Counter_Module/Trigger_0/T rising
-  Destination Clock: Counter_Module/Trigger_0/T rising
+Delay:               5.898ns (Levels of Logic = 1)
+  Source:            Counter_Module/Trigger_0/qtemp (FF)
+  Destination:       Counter_Module/Trigger_0/qtemp (FF)
+  Source Clock:      s_notT_o_0_OBUF rising
+  Destination Clock: s_notT_o_0_OBUF rising
 
-  Data Path: Counter_Module/Trigger_0/jk/qtemp to Counter_Module/Trigger_0/jk/qtemp
+  Data Path: Counter_Module/Trigger_0/qtemp to Counter_Module/Trigger_0/qtemp
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCPE:C->Q            6   1.292   1.850  Counter_Module/Trigger_0/jk/qtemp (Counter_Module/Trigger_0/jk/qtemp)
-     INV:I->O              1   0.653   1.150  Counter_Module/Trigger_0/jk/qtemp_mux00021_INV_0 (Counter_Module/Trigger_0/jk/qtemp_mux0002)
-     FDCPE:D                   0.753          Counter_Module/Trigger_0/jk/qtemp
+     FDCPE:C->Q            8   1.292   2.050  Counter_Module/Trigger_0/qtemp (Counter_Module/Trigger_0/qtemp)
+     INV:I->O              1   0.653   1.150  Counter_Module/Trigger_0/qtemp_mux00021_INV_0 (Counter_Module/Trigger_0/qtemp_mux0002)
+     FDCPE:D                   0.753          Counter_Module/Trigger_0/qtemp
     ----------------------------------------
-    Total                      5.698ns (2.698ns logic, 3.000ns route)
-                                       (47.3% logic, 52.7% route)
+    Total                      5.898ns (2.698ns logic, 3.200ns route)
+                                       (45.7% logic, 54.3% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'Counter_Module/Trigger_1/T'
-  Clock period: 6.784ns (frequency: 147.406MHz)
+Timing constraint: Default period analysis for Clock 's_notT_o_1_OBUF'
+  Clock period: 7.274ns (frequency: 137.476MHz)
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Delay:               6.784ns (Levels of Logic = 2)
-  Source:            Counter_Module/Trigger_1/jk/qbartemp (FF)
-  Destination:       Counter_Module/Trigger_1/jk/qbartemp (FF)
-  Source Clock:      Counter_Module/Trigger_1/T rising
-  Destination Clock: Counter_Module/Trigger_1/T rising
+Delay:               7.274ns (Levels of Logic = 2)
+  Source:            Counter_Module/Trigger_1/qbartemp (FF)
+  Destination:       Counter_Module/Trigger_1/qtemp (FF)
+  Source Clock:      s_notT_o_1_OBUF rising
+  Destination Clock: s_notT_o_1_OBUF rising
 
-  Data Path: Counter_Module/Trigger_1/jk/qbartemp to Counter_Module/Trigger_1/jk/qbartemp
+  Data Path: Counter_Module/Trigger_1/qbartemp to Counter_Module/Trigger_1/qtemp
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCPE:C->Q            4   1.292   1.600  Counter_Module/Trigger_1/jk/qbartemp (Counter_Module/Trigger_1/jk/qbartemp)
-     LUT4_L:I1->LO         1   0.653   0.100  Counter_Module/Trigger_1/T12 (Counter_Module/Trigger_1/T12)
-     LUT4:I1->O            4   0.653   1.600  Counter_Module/Trigger_1/T31 (Counter_Module/Trigger_1/T)
-     FDCPE:CE                  0.886          Counter_Module/Trigger_1/jk/qtemp
+     FDCPE:C->Q            7   1.292   1.950  Counter_Module/Trigger_1/qbartemp (Counter_Module/Trigger_1/qbartemp)
+     LUT3_D:I0->LO         1   0.653   0.100  Counter_Module/s_notAnd_magic_and00001 (N21)
+     LUT4:I3->O            5   0.653   1.740  Counter_Module/s_notT_1_not00001 (s_notT_o_1_OBUF)
+     FDCPE:CE                  0.886          Counter_Module/Trigger_1/qtemp
     ----------------------------------------
-    Total                      6.784ns (3.484ns logic, 3.300ns route)
-                                       (51.4% logic, 48.6% route)
+    Total                      7.274ns (3.484ns logic, 3.790ns route)
+                                       (47.9% logic, 52.1% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'Counter_Module/Trigger_2/T'
-  Clock period: 6.171ns (frequency: 162.048MHz)
+Timing constraint: Default period analysis for Clock 's_notT_o_2_OBUF'
+  Clock period: 10.407ns (frequency: 96.089MHz)
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Delay:               6.171ns (Levels of Logic = 1)
-  Source:            Counter_Module/Trigger_2/jk/qbartemp (FF)
-  Destination:       Counter_Module/Trigger_2/jk/qbartemp (FF)
-  Source Clock:      Counter_Module/Trigger_2/T rising
-  Destination Clock: Counter_Module/Trigger_2/T rising
+Delay:               10.407ns (Levels of Logic = 3)
+  Source:            Counter_Module/Trigger_2/qbartemp (FF)
+  Destination:       Counter_Module/Trigger_2/qtemp (FF)
+  Source Clock:      s_notT_o_2_OBUF rising
+  Destination Clock: s_notT_o_2_OBUF rising
 
-  Data Path: Counter_Module/Trigger_2/jk/qbartemp to Counter_Module/Trigger_2/jk/qbartemp
+  Data Path: Counter_Module/Trigger_2/qbartemp to Counter_Module/Trigger_2/qtemp
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCPE:C->Q            5   1.292   1.740  Counter_Module/Trigger_2/jk/qbartemp (Counter_Module/Trigger_2/jk/qbartemp)
-     LUT4:I2->O            4   0.653   1.600  Counter_Module/Trigger_2/T (Counter_Module/Trigger_2/T)
-     FDCPE:CE                  0.886          Counter_Module/Trigger_2/jk/qtemp
+     FDCPE:C->Q            6   1.292   1.850  Counter_Module/Trigger_2/qbartemp (Counter_Module/Trigger_2/qbartemp)
+     LUT3_D:I1->O          2   0.653   1.340  Counter_Module/s_notAnd_magic_and00001 (Counter_Module/s_notAnd_magic_and0000)
+     LUT4:I0->O            2   0.653   1.340  Counter_Module/s_and_21 (s_and_2_o_OBUF)
+     LUT4:I1->O            5   0.653   1.740  Counter_Module/s_notT_2_not00001 (s_notT_o_2_OBUF)
+     FDCPE:CE                  0.886          Counter_Module/Trigger_2/qtemp
     ----------------------------------------
-    Total                      6.171ns (2.831ns logic, 3.340ns route)
-                                       (45.9% logic, 54.1% route)
+    Total                     10.407ns (4.137ns logic, 6.270ns route)
+                                       (39.8% logic, 60.2% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'Counter_Module/Trigger_3/T'
-  Clock period: 6.784ns (frequency: 147.406MHz)
+Timing constraint: Default period analysis for Clock 's_notT_o_3_OBUF'
+  Clock period: 8.164ns (frequency: 122.489MHz)
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Delay:               6.784ns (Levels of Logic = 2)
-  Source:            Counter_Module/Trigger_3/jk/qtemp (FF)
-  Destination:       Counter_Module/Trigger_3/jk/qbartemp (FF)
-  Source Clock:      Counter_Module/Trigger_3/T rising
-  Destination Clock: Counter_Module/Trigger_3/T rising
+Delay:               8.164ns (Levels of Logic = 2)
+  Source:            Counter_Module/Trigger_3/qtemp (FF)
+  Destination:       Counter_Module/Trigger_3/qtemp (FF)
+  Source Clock:      s_notT_o_3_OBUF rising
+  Destination Clock: s_notT_o_3_OBUF rising
 
-  Data Path: Counter_Module/Trigger_3/jk/qtemp to Counter_Module/Trigger_3/jk/qbartemp
+  Data Path: Counter_Module/Trigger_3/qtemp to Counter_Module/Trigger_3/qtemp
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCPE:C->Q            4   1.292   1.600  Counter_Module/Trigger_3/jk/qtemp (Counter_Module/Trigger_3/jk/qtemp)
-     LUT4_L:I0->LO         1   0.653   0.100  Counter_Module/Trigger_3/T_SW0 (N4)
-     LUT4:I3->O            4   0.653   1.600  Counter_Module/Trigger_3/T (Counter_Module/Trigger_3/T)
-     FDCPE:CE                  0.886          Counter_Module/Trigger_3/jk/qtemp
+     FDCPE:C->Q            4   1.292   1.600  Counter_Module/Trigger_3/qtemp (Counter_Module/Trigger_3/qtemp)
+     LUT4:I0->O            2   0.653   1.340  Counter_Module/s_and_51 (s_and_5_o_OBUF)
+     LUT4:I1->O            5   0.653   1.740  Counter_Module/s_notT_3_not00001 (s_notT_o_3_OBUF)
+     FDCPE:CE                  0.886          Counter_Module/Trigger_3/qtemp
     ----------------------------------------
-    Total                      6.784ns (3.484ns logic, 3.300ns route)
-                                       (51.4% logic, 48.6% route)
+    Total                      8.164ns (3.484ns logic, 4.680ns route)
+                                       (42.7% logic, 57.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Counter_Module/Trigger_0/T'
+Timing constraint: Default OFFSET IN BEFORE for Clock 's_notT_o_0_OBUF'
   Total number of paths / destination ports: 4 / 2
 -------------------------------------------------------------------------
-Offset:              5.663ns (Levels of Logic = 2)
+Offset:              6.153ns (Levels of Logic = 2)
   Source:            CPU (PAD)
-  Destination:       Counter_Module/Trigger_0/jk/qbartemp (FF)
-  Destination Clock: Counter_Module/Trigger_0/T rising
+  Destination:       Counter_Module/Trigger_0/qtemp (FF)
+  Destination Clock: s_notT_o_0_OBUF rising
 
-  Data Path: CPU to Counter_Module/Trigger_0/jk/qbartemp
+  Data Path: CPU to Counter_Module/Trigger_0/qtemp
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   0.924   1.600  CPU_IBUF (CPU_IBUF)
-     LUT3:I0->O            4   0.653   1.600  Counter_Module/Trigger_0/T1 (Counter_Module/Trigger_0/T)
-     FDCPE:CE                  0.886          Counter_Module/Trigger_0/jk/qtemp
+     IBUF:I->O             7   0.924   1.950  CPU_IBUF (CPU_IBUF)
+     LUT3:I0->O            5   0.653   1.740  Counter_Module/s_notT_0_not00001 (s_notT_o_0_OBUF)
+     FDCPE:CE                  0.886          Counter_Module/Trigger_0/qtemp
     ----------------------------------------
-    Total                      5.663ns (2.463ns logic, 3.200ns route)
-                                       (43.5% logic, 56.5% route)
+    Total                      6.153ns (2.463ns logic, 3.690ns route)
+                                       (40.0% logic, 60.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Counter_Module/Trigger_1/T'
+Timing constraint: Default OFFSET IN BEFORE for Clock 's_notT_o_1_OBUF'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              8.146ns (Levels of Logic = 3)
+  Source:            CPU (PAD)
+  Destination:       Counter_Module/Trigger_1/qtemp (FF)
+  Destination Clock: s_notT_o_1_OBUF rising
+
+  Data Path: CPU to Counter_Module/Trigger_1/qtemp
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   0.924   1.950  CPU_IBUF (CPU_IBUF)
+     LUT4:I2->O            2   0.653   1.340  Counter_Module/s_and_11 (s_and_1_o_OBUF)
+     LUT4:I1->O            5   0.653   1.740  Counter_Module/s_notT_1_not00001 (s_notT_o_1_OBUF)
+     FDCPE:CE                  0.886          Counter_Module/Trigger_1/qtemp
+    ----------------------------------------
+    Total                      8.146ns (3.116ns logic, 5.030ns route)
+                                       (38.3% logic, 61.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 's_notT_o_2_OBUF'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              10.069ns (Levels of Logic = 4)
+  Source:            CPD (PAD)
+  Destination:       Counter_Module/Trigger_2/qtemp (FF)
+  Destination Clock: s_notT_o_2_OBUF rising
+
+  Data Path: CPD to Counter_Module/Trigger_2/qtemp
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.924   1.740  CPD_IBUF (CPD_IBUF)
+     LUT2:I1->O            3   0.653   1.480  cpd_in1 (cpd_in)
+     LUT4:I1->O            2   0.653   1.340  Counter_Module/s_and_21 (s_and_2_o_OBUF)
+     LUT4:I1->O            5   0.653   1.740  Counter_Module/s_notT_2_not00001 (s_notT_o_2_OBUF)
+     FDCPE:CE                  0.886          Counter_Module/Trigger_2/qtemp
+    ----------------------------------------
+    Total                     10.069ns (3.769ns logic, 6.300ns route)
+                                       (37.4% logic, 62.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 's_notT_o_3_OBUF'
   Total number of paths / destination ports: 6 / 2
 -------------------------------------------------------------------------
-Offset:              8.409ns (Levels of Logic = 4)
+Offset:              10.069ns (Levels of Logic = 4)
   Source:            CPD (PAD)
-  Destination:       Counter_Module/Trigger_1/jk/qbartemp (FF)
-  Destination Clock: Counter_Module/Trigger_1/T rising
+  Destination:       Counter_Module/Trigger_3/qtemp (FF)
+  Destination Clock: s_notT_o_3_OBUF rising
 
-  Data Path: CPD to Counter_Module/Trigger_1/jk/qbartemp
+  Data Path: CPD to Counter_Module/Trigger_3/qtemp
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   0.924   1.600  CPD_IBUF (CPD_IBUF)
-     LUT3:I2->O            2   0.653   1.340  Counter_Module/Trigger_1/T12_SW0 (N8)
-     LUT4_L:I0->LO         1   0.653   0.100  Counter_Module/Trigger_1/T12 (Counter_Module/Trigger_1/T12)
-     LUT4:I1->O            4   0.653   1.600  Counter_Module/Trigger_1/T31 (Counter_Module/Trigger_1/T)
-     FDCPE:CE                  0.886          Counter_Module/Trigger_1/jk/qtemp
+     IBUF:I->O             5   0.924   1.740  CPD_IBUF (CPD_IBUF)
+     LUT2:I1->O            3   0.653   1.480  cpd_in1 (cpd_in)
+     LUT4:I1->O            2   0.653   1.340  Counter_Module/s_and_41 (s_and_4_o_OBUF)
+     LUT4:I0->O            5   0.653   1.740  Counter_Module/s_notT_3_not00001 (s_notT_o_3_OBUF)
+     FDCPE:CE                  0.886          Counter_Module/Trigger_3/qtemp
     ----------------------------------------
-    Total                      8.409ns (3.769ns logic, 4.640ns route)
-                                       (44.8% logic, 55.2% route)
+    Total                     10.069ns (3.769ns logic, 6.300ns route)
+                                       (37.4% logic, 62.6% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Counter_Module/Trigger_2/T'
-  Total number of paths / destination ports: 4 / 2
+Timing constraint: Default OFFSET OUT AFTER for Clock 's_notT_o_3_OBUF'
+  Total number of paths / destination ports: 13 / 12
 -------------------------------------------------------------------------
-Offset:              7.656ns (Levels of Logic = 3)
-  Source:            CPD (PAD)
-  Destination:       Counter_Module/Trigger_2/jk/qbartemp (FF)
-  Destination Clock: Counter_Module/Trigger_2/T rising
+Offset:              15.078ns (Levels of Logic = 4)
+  Source:            Counter_Module/Trigger_3/qbartemp (FF)
+  Destination:       s_notT_o<2> (PAD)
+  Source Clock:      s_notT_o_3_OBUF rising
 
-  Data Path: CPD to Counter_Module/Trigger_2/jk/qbartemp
+  Data Path: Counter_Module/Trigger_3/qbartemp to s_notT_o<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   0.924   1.600  CPD_IBUF (CPD_IBUF)
-     LUT4:I1->O            2   0.653   1.340  Counter_Module/Trigger_2/T211 (Counter_Module/N9)
-     LUT4:I1->O            4   0.653   1.600  Counter_Module/Trigger_2/T (Counter_Module/Trigger_2/T)
-     FDCPE:CE                  0.886          Counter_Module/Trigger_2/jk/qtemp
+     FDCPE:C->Q            6   1.292   1.850  Counter_Module/Trigger_3/qbartemp (Counter_Module/Trigger_3/qbartemp)
+     LUT3_D:I2->O          2   0.653   1.340  Counter_Module/s_notAnd_magic_and00001 (Counter_Module/s_notAnd_magic_and0000)
+     LUT4:I0->O            2   0.653   1.340  Counter_Module/s_and_21 (s_and_2_o_OBUF)
+     LUT4:I1->O            5   0.653   1.740  Counter_Module/s_notT_2_not00001 (s_notT_o_2_OBUF)
+     OBUF:I->O                 5.557          s_notT_o_2_OBUF (s_notT_o<2>)
     ----------------------------------------
-    Total                      7.656ns (3.116ns logic, 4.540ns route)
-                                       (40.7% logic, 59.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Counter_Module/Trigger_3/T'
-  Total number of paths / destination ports: 4 / 2
--------------------------------------------------------------------------
-Offset:              8.409ns (Levels of Logic = 4)
-  Source:            CPU (PAD)
-  Destination:       Counter_Module/Trigger_3/jk/qbartemp (FF)
-  Destination Clock: Counter_Module/Trigger_3/T rising
-
-  Data Path: CPU to Counter_Module/Trigger_3/jk/qbartemp
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             4   0.924   1.600  CPU_IBUF (CPU_IBUF)
-     LUT2:I1->O            2   0.653   1.340  cpu_in1 (cpu_in)
-     LUT4_L:I3->LO         1   0.653   0.100  Counter_Module/Trigger_3/T_SW0 (N4)
-     LUT4:I3->O            4   0.653   1.600  Counter_Module/Trigger_3/T (Counter_Module/Trigger_3/T)
-     FDCPE:CE                  0.886          Counter_Module/Trigger_3/jk/qtemp
-    ----------------------------------------
-    Total                      8.409ns (3.769ns logic, 4.640ns route)
-                                       (44.8% logic, 55.2% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'Counter_Module/Trigger_1/T'
-  Total number of paths / destination ports: 2 / 2
--------------------------------------------------------------------------
-Offset:              10.252ns (Levels of Logic = 2)
-  Source:            Counter_Module/Trigger_1/jk/qbartemp (FF)
-  Destination:       notTCD (PAD)
-  Source Clock:      Counter_Module/Trigger_1/T rising
-
-  Data Path: Counter_Module/Trigger_1/jk/qbartemp to notTCD
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDCPE:C->Q            4   1.292   1.600  Counter_Module/Trigger_1/jk/qbartemp (Counter_Module/Trigger_1/jk/qbartemp)
-     LUT4:I0->O            1   0.653   1.150  Counter_Module/notTCD (notTCD_OBUF)
-     OBUF:I->O                 5.557          notTCD_OBUF (notTCD)
-    ----------------------------------------
-    Total                     10.252ns (7.502ns logic, 2.750ns route)
-                                       (73.2% logic, 26.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'Counter_Module/Trigger_2/T'
-  Total number of paths / destination ports: 2 / 2
--------------------------------------------------------------------------
-Offset:              10.392ns (Levels of Logic = 2)
-  Source:            Counter_Module/Trigger_2/jk/qbartemp (FF)
-  Destination:       notTCD (PAD)
-  Source Clock:      Counter_Module/Trigger_2/T rising
-
-  Data Path: Counter_Module/Trigger_2/jk/qbartemp to notTCD
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDCPE:C->Q            5   1.292   1.740  Counter_Module/Trigger_2/jk/qbartemp (Counter_Module/Trigger_2/jk/qbartemp)
-     LUT4:I1->O            1   0.653   1.150  Counter_Module/notTCD (notTCD_OBUF)
-     OBUF:I->O                 5.557          notTCD_OBUF (notTCD)
-    ----------------------------------------
-    Total                     10.392ns (7.502ns logic, 2.890ns route)
-                                       (72.2% logic, 27.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'Counter_Module/Trigger_3/T'
-  Total number of paths / destination ports: 3 / 3
--------------------------------------------------------------------------
-Offset:              10.392ns (Levels of Logic = 2)
-  Source:            Counter_Module/Trigger_3/jk/qbartemp (FF)
-  Destination:       notTCD (PAD)
-  Source Clock:      Counter_Module/Trigger_3/T rising
-
-  Data Path: Counter_Module/Trigger_3/jk/qbartemp to notTCD
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDCPE:C->Q            5   1.292   1.740  Counter_Module/Trigger_3/jk/qbartemp (Counter_Module/Trigger_3/jk/qbartemp)
-     LUT4:I2->O            1   0.653   1.150  Counter_Module/notTCD (notTCD_OBUF)
-     OBUF:I->O                 5.557          notTCD_OBUF (notTCD)
-    ----------------------------------------
-    Total                     10.392ns (7.502ns logic, 2.890ns route)
-                                       (72.2% logic, 27.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'Counter_Module/Trigger_0/T'
-  Total number of paths / destination ports: 3 / 3
--------------------------------------------------------------------------
-Offset:              12.245ns (Levels of Logic = 3)
-  Source:            Counter_Module/Trigger_0/jk/qbartemp (FF)
-  Destination:       notTCD (PAD)
-  Source Clock:      Counter_Module/Trigger_0/T rising
-
-  Data Path: Counter_Module/Trigger_0/jk/qbartemp to notTCD
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDCPE:C->Q            4   1.292   1.600  Counter_Module/Trigger_0/jk/qbartemp (Counter_Module/Trigger_0/jk/qbartemp)
-     LUT3:I0->O            2   0.653   1.340  Counter_Module/Trigger_1/T12_SW0 (N8)
-     LUT4:I3->O            1   0.653   1.150  Counter_Module/notTCD (notTCD_OBUF)
-     OBUF:I->O                 5.557          notTCD_OBUF (notTCD)
-    ----------------------------------------
-    Total                     12.245ns (8.155ns logic, 4.090ns route)
-                                       (66.6% logic, 33.4% route)
+    Total                     15.078ns (8.808ns logic, 6.270ns route)
+                                       (58.4% logic, 41.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
-  Total number of paths / destination ports: 2 / 2
+  Total number of paths / destination ports: 19 / 15
 -------------------------------------------------------------------------
-Offset:              12.695ns (Levels of Logic = 3)
+Offset:              15.768ns (Levels of Logic = 4)
   Source:            CLK_Counter_module/temporal (FF)
-  Destination:       notTCD (PAD)
+  Destination:       s_notT_o<3> (PAD)
   Source Clock:      CLK rising
 
-  Data Path: CLK_Counter_module/temporal to notTCD
+  Data Path: CLK_Counter_module/temporal to s_notT_o<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              8   1.292   2.050  CLK_Counter_module/temporal (CLK_Counter_module/temporal)
-     LUT3:I1->O            2   0.653   1.340  Counter_Module/Trigger_1/T12_SW0 (N8)
-     LUT4:I3->O            1   0.653   1.150  Counter_Module/notTCD (notTCD_OBUF)
-     OBUF:I->O                 5.557          notTCD_OBUF (notTCD)
+     FDE:C->Q             12   1.292   2.400  CLK_Counter_module/temporal (CLK_Counter_module/temporal)
+     LUT2:I0->O            3   0.653   1.480  cpd_in1 (cpd_in)
+     LUT4:I1->O            2   0.653   1.340  Counter_Module/s_and_41 (s_and_4_o_OBUF)
+     LUT4:I0->O            5   0.653   1.740  Counter_Module/s_notT_3_not00001 (s_notT_o_3_OBUF)
+     OBUF:I->O                 5.557          s_notT_o_3_OBUF (s_notT_o<3>)
     ----------------------------------------
-    Total                     12.695ns (8.155ns logic, 4.540ns route)
-                                       (64.2% logic, 35.8% route)
+    Total                     15.768ns (8.808ns logic, 6.960ns route)
+                                       (55.9% logic, 44.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 's_notT_o_0_OBUF'
+  Total number of paths / destination ports: 18 / 14
+-------------------------------------------------------------------------
+Offset:              13.285ns (Levels of Logic = 3)
+  Source:            Counter_Module/Trigger_0/qtemp (FF)
+  Destination:       s_notT_o<3> (PAD)
+  Source Clock:      s_notT_o_0_OBUF rising
+
+  Data Path: Counter_Module/Trigger_0/qtemp to s_notT_o<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCPE:C->Q            8   1.292   2.050  Counter_Module/Trigger_0/qtemp (Counter_Module/Trigger_0/qtemp)
+     LUT4:I3->O            2   0.653   1.340  Counter_Module/s_and_51 (s_and_5_o_OBUF)
+     LUT4:I1->O            5   0.653   1.740  Counter_Module/s_notT_3_not00001 (s_notT_o_3_OBUF)
+     OBUF:I->O                 5.557          s_notT_o_3_OBUF (s_notT_o<3>)
+    ----------------------------------------
+    Total                     13.285ns (8.155ns logic, 5.130ns route)
+                                       (61.4% logic, 38.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 's_notT_o_2_OBUF'
+  Total number of paths / destination ports: 12 / 11
+-------------------------------------------------------------------------
+Offset:              15.078ns (Levels of Logic = 4)
+  Source:            Counter_Module/Trigger_2/qbartemp (FF)
+  Destination:       s_notT_o<2> (PAD)
+  Source Clock:      s_notT_o_2_OBUF rising
+
+  Data Path: Counter_Module/Trigger_2/qbartemp to s_notT_o<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCPE:C->Q            6   1.292   1.850  Counter_Module/Trigger_2/qbartemp (Counter_Module/Trigger_2/qbartemp)
+     LUT3_D:I1->O          2   0.653   1.340  Counter_Module/s_notAnd_magic_and00001 (Counter_Module/s_notAnd_magic_and0000)
+     LUT4:I0->O            2   0.653   1.340  Counter_Module/s_and_21 (s_and_2_o_OBUF)
+     LUT4:I1->O            5   0.653   1.740  Counter_Module/s_notT_2_not00001 (s_notT_o_2_OBUF)
+     OBUF:I->O                 5.557          s_notT_o_2_OBUF (s_notT_o<2>)
+    ----------------------------------------
+    Total                     15.078ns (8.808ns logic, 6.270ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 's_notT_o_1_OBUF'
+  Total number of paths / destination ports: 16 / 12
+-------------------------------------------------------------------------
+Offset:              15.178ns (Levels of Logic = 4)
+  Source:            Counter_Module/Trigger_1/qbartemp (FF)
+  Destination:       s_notT_o<2> (PAD)
+  Source Clock:      s_notT_o_1_OBUF rising
+
+  Data Path: Counter_Module/Trigger_1/qbartemp to s_notT_o<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCPE:C->Q            7   1.292   1.950  Counter_Module/Trigger_1/qbartemp (Counter_Module/Trigger_1/qbartemp)
+     LUT3_D:I0->O          2   0.653   1.340  Counter_Module/s_notAnd_magic_and00001 (Counter_Module/s_notAnd_magic_and0000)
+     LUT4:I0->O            2   0.653   1.340  Counter_Module/s_and_21 (s_and_2_o_OBUF)
+     LUT4:I1->O            5   0.653   1.740  Counter_Module/s_notT_2_not00001 (s_notT_o_2_OBUF)
+     OBUF:I->O                 5.557          s_notT_o_2_OBUF (s_notT_o<2>)
+    ----------------------------------------
+    Total                     15.178ns (8.808ns logic, 6.370ns route)
+                                       (58.0% logic, 42.0% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 2 / 2
+  Total number of paths / destination ports: 46 / 25
 -------------------------------------------------------------------------
-Delay:               11.877ns (Levels of Logic = 4)
+Delay:               14.740ns (Levels of Logic = 5)
   Source:            CPD (PAD)
-  Destination:       notTCD (PAD)
+  Destination:       s_notT_o<3> (PAD)
 
-  Data Path: CPD to notTCD
+  Data Path: CPD to s_notT_o<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   0.924   1.600  CPD_IBUF (CPD_IBUF)
-     LUT3:I2->O            2   0.653   1.340  Counter_Module/Trigger_1/T12_SW0 (N8)
-     LUT4:I3->O            1   0.653   1.150  Counter_Module/notTCD (notTCD_OBUF)
-     OBUF:I->O                 5.557          notTCD_OBUF (notTCD)
+     IBUF:I->O             5   0.924   1.740  CPD_IBUF (CPD_IBUF)
+     LUT2:I1->O            3   0.653   1.480  cpd_in1 (cpd_in)
+     LUT4:I1->O            2   0.653   1.340  Counter_Module/s_and_41 (s_and_4_o_OBUF)
+     LUT4:I0->O            5   0.653   1.740  Counter_Module/s_notT_3_not00001 (s_notT_o_3_OBUF)
+     OBUF:I->O                 5.557          s_notT_o_3_OBUF (s_notT_o<3>)
     ----------------------------------------
-    Total                     11.877ns (7.787ns logic, 4.090ns route)
-                                       (65.6% logic, 34.4% route)
+    Total                     14.740ns (8.440ns logic, 6.300ns route)
+                                       (57.3% logic, 42.7% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 2.70 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 2.32 secs
  
 --> 
 
-Total memory usage is 193660 kilobytes
+Total memory usage is 192708 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

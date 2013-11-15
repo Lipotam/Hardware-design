@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<document OS="nt" product="ISE" version="10.1">
+<document OS="nt" product="ISE" version="10.1.03">
 
   <!--The data in this file is primarily intended for consumption by Xilinx tools.
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Thu Nov 14 14:24:23 2013">
+  <application stringID="Xst" timeStamp="Tue Nov 05 20:08:59 2013">
     <section stringID="XST_HDL_SYNTHESIS_REPORT">
       <item dataType="int" stringID="XST_COUNTERS" value="1"></item>
       <item dataType="int" stringID="XST_REGISTERS" value="9">
@@ -40,7 +40,7 @@
         <item stringID="XST_IOS" value="15"/>
       </section>
       <section stringID="XST_CELL_USAGE">
-        <item dataType="int" stringID="XST_BELS" value="122">
+        <item dataType="int" stringID="XST_BELS" value="123">
           <item dataType="int" stringID="XST_GND" value="1"/>
           <item dataType="int" stringID="XST_INV" value="10"/>
           <item dataType="int" stringID="XST_LUT1" value="25"/>
@@ -50,7 +50,7 @@
           <item dataType="int" stringID="XST_LUT4L" value="2"/>
           <item dataType="int" stringID="XST_MUXCY" value="32"/>
           <item dataType="int" stringID="XST_VCC" value="1"/>
-          <item dataType="int" stringID="XST_XORCY" value="25"/>
+          <item dataType="int" stringID="XST_XORCY" value="26"/>
         </item>
         <item dataType="int" stringID="XST_FLIPFLOPSLATCHES" value="35">
           <item dataType="int" stringID="XST_FDE" value="1"/>

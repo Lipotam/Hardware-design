@@ -1,11 +1,11 @@
 Release 10.1 ngdbuild K.31 (nt)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\10.1\ISE\bin\nt\unwrapped\ngdbuild.exe -ise
-D:/OwnProjects/HardwareDesign/lab4/lab3.ise -intstyle ise -dd _ngo -nt timestamp
--i -p xc2s200-fg256-5 Full_Device.ngc Full_Device.ngd
+Command Line: D:\BSUIR\WebPack\ISE\bin\nt\unwrapped\ngdbuild.exe -ise
+D:/BSUIR/Projects/HardwareDesign/lab4/lab3.ise -intstyle ise -dd _ngo -nt
+timestamp -i -p xc2s200-fg256-5 Full_Device.ngc Full_Device.ngd
 
-Reading NGO file "D:/OwnProjects/HardwareDesign/lab4/Full_Device.ngc" ...
+Reading NGO file "D:/BSUIR/Projects/HardwareDesign/lab4/Full_Device.ngc" ...
 Reading in constraint information from 'Device_UCF.ucf'...
 Gathering constraint information from source properties...
 Done.
@@ -52,7 +52,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   8
 
-Total memory usage is 108288 kilobytes
+Total memory usage is 108104 kilobytes
 
 Writing NGD file "Full_Device.ngd" ...
 

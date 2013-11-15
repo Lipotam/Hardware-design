@@ -1,5 +1,5 @@
-set -tmpdir "D:/OwnProjects/HardwareDesign/lab4/xst/projnav.tmp"
-set -xsthdpdir "D:/OwnProjects/HardwareDesign/lab4/xst"
+set -tmpdir "D:/BSUIR/Projects/HardwareDesign/lab4/xst/projnav.tmp"
+set -xsthdpdir "D:/BSUIR/Projects/HardwareDesign/lab4/xst"
 run
 -ifn Full_Device.prj
 -ifmt mixed

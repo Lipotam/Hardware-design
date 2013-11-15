@@ -3,14 +3,14 @@ Xilinx Mapping Report File for Design 'Full_Device'
 
 Design Information
 ------------------
-Command Line   : map -ise D:/OwnProjects/HardwareDesign/lab4/lab3.ise -intstyle
-ise -p xc2s200-fg256-5 -cm area -pr off -k 4 -c 100 -tx off -o
+Command Line   : map -ise D:/BSUIR/Projects/HardwareDesign/lab4/lab3.ise
+-intstyle ise -p xc2s200-fg256-5 -cm area -pr off -k 4 -c 100 -tx off -o
 Full_Device_map.ncd Full_Device.ngd Full_Device.pcf 
 Target Device  : xc2s200
 Target Package : fg256
 Target Speed   : -5
 Mapper Version : spartan2 -- $Revision: 1.46 $
-Mapped Date    : Thu Nov 14 14:26:20 2013
+Mapped Date    : Fri Nov 15 13:18:05 2013
 
 Design Summary
 --------------
@@ -18,20 +18,20 @@ Number of errors:      0
 Number of warnings:    4
 Logic Utilization:
   Number of Slice Flip Flops:        35 out of  4,704    1%
-  Number of 4 input LUTs:            29 out of  4,704    1%
+  Number of 4 input LUTs:            44 out of  4,704    1%
 Logic Distribution:
-    Number of occupied Slices:                          37 out of  2,352    1%
-    Number of Slices containing only related logic:     37 out of     37  100%
-    Number of Slices containing unrelated logic:         0 out of     37    0%
+    Number of occupied Slices:                          44 out of  2,352    1%
+    Number of Slices containing only related logic:     44 out of     44  100%
+    Number of Slices containing unrelated logic:         0 out of     44    0%
         *See NOTES below for an explanation of the effects of unrelated logic
-Total Number of 4 input LUTs:           54 out of  4,704    1%
-      Number used as logic:                        29
+Total Number of 4 input LUTs:           69 out of  4,704    1%
+      Number used as logic:                        44
       Number used as a route-thru:                 25
-   Number of bonded IOBs:            14 out of    176    7%
+   Number of bonded IOBs:            42 out of    176   23%
    Number of GCLKs:                   1 out of      4   25%
    Number of GCLKIOBs:                1 out of      4   25%
 
-Peak Memory Usage:  176 MB
+Peak Memory Usage:  175 MB
 Total REAL time to MAP completion:  0 secs 
 Total CPU time to MAP completion:   0 secs 
 
@@ -75,18 +75,18 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:PhysDesignRules:372 - Gated clock. Clock net Counter_Module/Trigger_3/T
-   is sourced by a combinatorial pin. This is not good design practice. Use the
-   CE pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net Counter_Module/Trigger_1/T
-   is sourced by a combinatorial pin. This is not good design practice. Use the
-   CE pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net Counter_Module/Trigger_0/T
-   is sourced by a combinatorial pin. This is not good design practice. Use the
-   CE pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net Counter_Module/Trigger_2/T
-   is sourced by a combinatorial pin. This is not good design practice. Use the
-   CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net s_notT_o_0_OBUF is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net s_notT_o_1_OBUF is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net s_notT_o_2_OBUF is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net s_notT_o_3_OBUF is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
 
 Section 3 - Informational
 -------------------------
@@ -132,6 +132,34 @@ Section 6 - IOB Properties
 | notPL                              | IOB     | INPUT     | LVTTL       |          |      |          |          |       |
 | notTCD                             | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
 | notTCU                             | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_PL_o                             | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_SET_o<0>                         | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_SET_o<1>                         | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_SET_o<2>                         | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_SET_o<3>                         | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_and_0_o                          | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_and_1_o                          | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_and_2_o                          | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_and_3_o                          | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_and_4_o                          | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_and_5_o                          | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_and_6_o                          | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notAnd_magic_o                   | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notCPD_o                         | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notCPU_o                         | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notMR_o                          | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notOUTPUT_o<0>                   | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notOUTPUT_o<1>                   | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notOUTPUT_o<2>                   | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notOUTPUT_o<3>                   | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notRightR_o<0>                   | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notRightR_o<1>                   | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notRightR_o<2>                   | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notRightR_o<3>                   | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notT_o<0>                        | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notT_o<1>                        | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notT_o<2>                        | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
+| s_notT_o<3>                        | IOB     | OUTPUT    | LVTTL       | 12       | SLOW |          |          |       |
 +------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs

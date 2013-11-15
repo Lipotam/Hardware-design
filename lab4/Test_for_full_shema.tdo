@@ -10,6 +10,6 @@ do {Test_for_full_shema_wave.tdo}
 view wave
 view structure
 view signals
-run 110ms
+run 1000ns
 do {Test_for_full_shema.udo}
 ## End
