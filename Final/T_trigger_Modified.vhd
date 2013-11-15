@@ -37,25 +37,19 @@ port (
 end T_trigger_Modified;
 
 architecture Behavioral of T_trigger_Modified is
-
-component JK_trigger is
-port (
-		CLK, J, K, R, S  : in std_logic;
-      Q, notQ : out std_logic 
-	);
-end component;
-
-signal Rst, T, Qtemp1, Qtemp2 : std_logic;
-
+ signal q_reg: std_logic;
 begin
 
-Rst <= leftR and rightR;
-T <= not notT;
-
-jk: JK_trigger port map(T, T, T, Rst, S, Qtemp1, Qtemp2);
-
-Q <= Qtemp1;
-notQ <= Qtemp2;
-
+ process(notT, leftR, rightR, S)
+ begin
+       if (rightR = '0' or leftR = '0') then
+          q_reg <= '0';
+		 elsif (S = '0') then
+			 q_reg <= '1';
+       elsif (notT'event and notT = '1') then
+          q_reg <= not (q_reg);
+       end if;
+ end process;
+       Q <= q_reg;
+		 notQ <=  not q_reg;
 end Behavioral;
-
