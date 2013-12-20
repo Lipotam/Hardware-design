@@ -1,3 +1,0 @@
-MODULE Counter_test
-SUBMODULE CLK_counter
-INSTANCE UUT
